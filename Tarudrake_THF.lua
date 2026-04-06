@@ -272,3 +272,10 @@ function sub_job_change(new, old)
 	end
 	send_command("@wait 5;input /lockstyleset 4")
 end
+
+function buff_change(buff, gain)
+	buff_name = buff:lower()
+	if buff_name == "encumbrance" and not gain then
+		Common_Funcs.Update_Gear()
+	end
+end

@@ -121,13 +121,11 @@ function get_sets()
 	sub_job_change(player.sub_job, "NON")
 end
 
-
 function precast(spell)
 	if spell.english == "Spectral Jig" and buffactive.sneak then
 		send_command("cancel sneak")
 	end
 end
-
 
 function midcast(spell)
 	if sets.JA[spell.english] then
@@ -139,7 +137,6 @@ function midcast(spell)
 		end
 	end
 end
-
 
 function aftercast(spell)
 	if player.status == "Engaged" then
@@ -153,7 +150,6 @@ function aftercast(spell)
 	equip(sets.Weapon[Weapon_map[Weapon_mode]])
 end
 
-
 function status_change(new, old)
 	if T {"Idle", "Resting"}:contains(new) then
 		equip(sets.Idle)
@@ -165,7 +161,6 @@ function status_change(new, old)
 	end
 	equip(sets.Weapon[Weapon_map[Weapon_mode]])
 end
-
 
 function self_command(command)
 	if string.lower(command) == "dt" then
@@ -201,7 +196,6 @@ function self_command(command)
 	end
 end
 
-
 function sub_job_change(new, old)
 	if new == "NIN" then
 		send_command("input /macro book 5;wait .1;input /macro set 1")
@@ -222,4 +216,9 @@ function sub_job_change(new, old)
 	send_command("@wait 5;input /lockstyleset 1")
 end
 
-
+function buff_change(buff, gain)
+	buff_name = buff:lower()
+	if buff_name == "encumbrance" and not gain then
+		Common_Funcs.Update_Gear()
+	end
+end

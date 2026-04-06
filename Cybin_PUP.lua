@@ -421,9 +421,13 @@ function sub_job_change(new, old)
 	send_command("@wait 5;input /lockstyleset 1")
 end
 
-function buff_change(name, gain, buff_details)
-	if not gain and AutoManeuver and string.find(name, "Maneuver") then
-		send_command(name)
+function buff_change(buff, gain, buff_details)
+	buff_name = buff:lower()
+
+	if AutoManeuver and string.find(buff_name, "maneuver") and not gain then
+		send_command(buff)
+	elseif buff_name == "encumbrance" and not gain then
+		Common_Funcs.Update_Gear()
 	end
 end
 

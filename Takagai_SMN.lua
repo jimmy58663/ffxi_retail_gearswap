@@ -399,7 +399,6 @@ function get_sets()
 	sub_job_change(player.sub_job, "NON")
 end
 
-
 function precast(spell)
 	if midaction() or pet_midaction() then
 		return
@@ -415,7 +414,6 @@ function precast(spell)
 		equip(sets.precast.Summoning)
 	end
 end
-
 
 function midcast(spell)
 	if pet_midaction() then
@@ -437,7 +435,6 @@ function midcast(spell)
 	end
 end
 
-
 function aftercast(spell)
 	if pet_midaction() then
 		return
@@ -452,7 +449,6 @@ function aftercast(spell)
 	end
 end
 
-
 function pet_change(pet, gain)
 	if gain then
 		equip(sets.Avatar.PerpCost)
@@ -460,7 +456,6 @@ function pet_change(pet, gain)
 		equip(sets.Idle)
 	end
 end
-
 
 function pet_midcast(spell)
 	if (spell.type == "BloodPactRage" or spell.type == "BloodPactWard") then
@@ -478,7 +473,6 @@ function pet_midcast(spell)
 	end
 end
 
-
 function pet_aftercast(spell)
 	if (buffactive["Apogee"] or buffactive["Astral Conduit"]) and AutoBP then
 		if (player.mp < 229) then
@@ -488,7 +482,6 @@ function pet_aftercast(spell)
 	end
 	aftercast(spell)
 end
-
 
 function status_change(new, old)
 	if new == "Resting" then
@@ -501,7 +494,6 @@ function status_change(new, old)
 		end
 	end
 end
-
 
 function self_command(command)
 	if string.lower(command) == "dt" then
@@ -520,7 +512,6 @@ function self_command(command)
 
 end
 
-
 function sub_job_change(new, old)
 	if player.sub_job == "RDM" then
 		send_command("input /macro book 15;wait .1;input /macro set 1")
@@ -530,4 +521,9 @@ function sub_job_change(new, old)
 	send_command("@wait 5;input /lockstyleset 1")
 end
 
-
+function buff_change(buff, gain)
+	buff_name = buff:lower()
+	if buff_name == "encumbrance" and not gain then
+		Common_Funcs.Update_Gear()
+	end
+end

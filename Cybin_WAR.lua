@@ -311,12 +311,17 @@ windower.register_event("action", function(act)
 						else
 							equip(sets.Idle)
 						end
-					end
-, 3)
+					end, 3)
 					break
 				end
 			end
 		end
 	end
+end)
+
+function buff_change(buff, gain)
+	buff_name = buff:lower()
+	if buff_name == "encumbrance" and not gain then
+		Common_Funcs.Update_Gear()
+	end
 end
-)

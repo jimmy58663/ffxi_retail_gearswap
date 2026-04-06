@@ -1,5 +1,6 @@
 include("organizer-lib")
 
+local Craft = include("Craft")
 local Common_Funcs = include("Common_Funcs")
 
 function get_sets()
@@ -134,3 +135,9 @@ function sub_job_change(new, old)
 	send_command("@wait 5;input /lockstyleset 1")
 end
 
+function buff_change(buff, gain)
+	buff_name = buff:lower()
+	if buff_name == "encumbrance" and not gain then
+		Common_Funcs.Update_Gear()
+	end
+end

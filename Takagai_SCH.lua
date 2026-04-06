@@ -347,7 +347,6 @@ function get_sets()
 	sub_job_change(player.sub_job, "NON")
 end
 
-
 function precast(spell)
 	if spell.action_type == "Magic" then
 		equip(sets.precast.FC)
@@ -362,7 +361,6 @@ function precast(spell)
 		end
 	end
 end
-
 
 function midcast(spell)
 	if sets.midcast[spell.english] then
@@ -393,7 +391,6 @@ function midcast(spell)
 	end
 end
 
-
 function aftercast(spell)
 	if player.status == "Engaged" then
 		equip(sets.TP[TP_map[TP_mode]])
@@ -401,7 +398,6 @@ function aftercast(spell)
 		equip(sets.Idle[Idle_map[Idle_mode]])
 	end
 end
-
 
 function status_change(new, old)
 	if new == "Engaged" then
@@ -415,7 +411,6 @@ function status_change(new, old)
 		end
 	end
 end
-
 
 function self_command(command)
 	if string.lower(command) == "tp" then
@@ -460,17 +455,17 @@ function self_command(command)
 	end
 end
 
-
 function sub_job_change(new, old)
 	send_command("input /macro book 3;wait .1;input /macro set 1")
 	send_command("@wait 5;input /lockstyleset 1")
 end
 
-
-function buff_change(name, gain, buff_details)
-	if gain and name == "Sublimation: Activated" then
+function buff_change(buff, gain, buff_details)
+	buff_name = buff:lower()
+	if buff_name == "sublimation: activated" and gain then
 		equip(sets.Idle.Sublimation)
+	elseif buff_name == "encumbrance" and not gain then
+		Common_Funcs.Update_Gear()
 	end
 end
-
 

@@ -339,14 +339,12 @@ function get_sets()
 	sub_job_change(player.sub_job, "NON")
 end
 
-
 local function affinity_check(element)
 	if element == world.weather_element or element == world.day_element and sets.Midcast.Obis[element] then
 		equip(sets.Midcast.Obis[element])
 	end
 	-- if set.Midcast[element] then equip(set.Midcast[element]) end
 end
-
 
 function precast(spell)
 	if spell.action_type == "Magic" then
@@ -362,7 +360,6 @@ function precast(spell)
 		end
 	end
 end
-
 
 function midcast(spell)
 	if sets.Midcast[spell.english] then
@@ -401,7 +398,6 @@ function midcast(spell)
 	end
 end
 
-
 function aftercast(spell)
 	if player.status == "Engaged" then
 		equip(sets.TP[TP_map[TP_mode]])
@@ -409,7 +405,6 @@ function aftercast(spell)
 		equip(sets.Idle[Idle_map[Idle_mode]])
 	end
 end
-
 
 function status_change(new, old)
 	if new == "Engaged" then
@@ -421,7 +416,6 @@ function status_change(new, old)
 		end
 	end
 end
-
 
 function self_command(command)
 	command = string.lower(command)
@@ -479,19 +473,19 @@ function self_command(command)
 
 end
 
-
 function sub_job_change(new, old)
 	send_command("input /macro book 4;wait .1;input /macro set 1")
 	send_command("@wait 5;input /lockstyleset 4")
 end
 
-
-function buff_change(name, gain, buff_details)
-	if gain and name == "Sublimation: Activated" then
+function buff_change(buff, gain, buff_details)
+	buff_name = buff:lower()
+	if buff_name == "sublimation: activated" and gain then
 		equip(sets.Idle.Sublimation)
+	elseif buff_name == "encumbrance" and not gain then
+		Common_Funcs.Update_Gear()
 	end
 end
-
 
 windower.register_event("incoming chunk", function(id, data)
 	if id == 0x28 then -- Action Packet
@@ -540,12 +534,10 @@ windower.register_event("incoming chunk", function(id, data)
 						mb_timer = coroutine.schedule(function()
 							MagicBurstWindow = false
 							add_to_chat(123, "Magic Burst Window Closed.")
-						end
-, 10)
+						end, 10)
 					end
 				end
 			end
 		end
 	end
-end
-)
+end)

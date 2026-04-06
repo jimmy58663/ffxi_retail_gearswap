@@ -509,12 +509,17 @@ windower.register_event("incoming chunk", function(id, data)
 						mb_timer = coroutine.schedule(function()
 							MagicBurstWindow = false
 							add_to_chat(123, "Magic Burst Window Closed.")
-						end
-, 10)
+						end, 10)
 					end
 				end
 			end
 		end
 	end
+end)
+
+function buff_change(buff, gain)
+	buff_name = buff:lower()
+	if buff_name == "encumbrance" and not gain then
+		Common_Funcs.Update_Gear()
+	end
 end
-)
