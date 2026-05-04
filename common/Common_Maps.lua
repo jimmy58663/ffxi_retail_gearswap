@@ -154,6 +154,7 @@ Maps.WhiteMagic = {
 	["Baramnesra"] = "BarStatus",
 }
 
+Maps.BlueMagic = {}
 Maps.BlueMagic.Physical = {
 	["Bloodrake"] = "STR",
 	["Death Scissors"] = "STR",
