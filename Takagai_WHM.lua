@@ -138,24 +138,24 @@ function get_sets()
 	}
 
 	sets.midcast.Cure = {
-		main = "Pandit's Staff", -- 50%
-		sub = "Enki Strap",
+		main = "Daybreak", -- 30%
+		sub = "Culminus", -- 10% SIRD
 		ammo = "Kalboron Stone",
 		head = "Ebers Cap +2", -- 19%
 		neck = "Clr. Torque +1", -- 7%
 		left_ear = "Roundel Earring", -- 5%
 		right_ear = "Orison Earring", -- 2%
 		body = "Ebers Bliaut +2", -- Afflatus Solace 16%
-		hands = "Weath. Cuffs +1", -- 9%
+		hands = "Ebers Mitts +2", -- 10% DT
 		left_ring = "Fountain Ring",
-		right_ring = "Zodiac Ring",
+		right_ring = "Murky Ring", -- 10% DT, 3% SIRD
 		back = {
 			name = "Alaunus's Cape",
 			augments = {"MND+20", "Eva.+20/Mag. Eva.+20", "MND+10", "\"Cure\" potency +10%", "Phys. dmg. taken-10%"},
 		}, -- 10%
-		waist = "Belisama's Rope +1",
-		legs = "Ebers Pant. +2",
-		feet = "Ebers Duckbills +2",
+		waist = "Rumination Sash", -- 10% SIRD
+		legs = "Ebers Pant. +2", -- 12% DT, Cure->MP
+		feet = "Ebers Duckbills +2", -- 10% DT
 	}
 
 	sets.midcast.Regen = {
