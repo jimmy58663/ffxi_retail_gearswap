@@ -22,15 +22,25 @@ function get_sets()
 	TP_map = {[1] = "Normal", [2] = "Acc", [3] = "DT"}
 	TP_mode = 1
 
-	Weapon_map = {[1] = "Yoichi", [2] = "Fomalhaut", [3] = "Naegling", [4] = "FomalhautDW", [5] = "YoichiDW"}
-	Weapon_mode = 2
+	Weapon_map = {
+		[1] = "Yoichi",
+		[2] = "Fomalhaut",
+		[3] = "Annihilator",
+		[4] = "Naegling",
+		[5] = "YoichiDW",
+		[6] = "FomalhautDW",
+		[7] = "AnnihilatorDW",
+	}
+	Weapon_mode = 3
 
 	sets.Weapon = {}
 	sets.Weapon.Yoichi = {main = "Naegling", sub = "Nusku Shield", range = "Yoichinoyumi", ammo = "Eminent Arrow"}
 	sets.Weapon.Fomalhaut = {main = "Naegling", sub = "Nusku Shield", range = "Fomalhaut", ammo = "Chrono Bullet"}
 	sets.Weapon.Naegling = {main = "Naegling", sub = "Nusku Shield", range = "Ataktos", ammo = "Chrono Bullet"}
+	sets.Weapon.Annihilator = {main = "Naegling", sub = "Nusku Shield", range = "Annihilator", ammo = "Chrono Bullet"}
 	sets.Weapon.FomalhautDW = {main = "Naegling", sub = "Gleti's Knife", range = "Fomalhaut", ammo = "Chrono Bullet"}
 	sets.Weapon.YoichiDW = {main = "Naegling", sub = "Gleti's Knife", range = "Yoichinoyumi", ammo = "Eminent Arrow"}
+	sets.Weapon.AnnihilatorDW = {main = "Naegling", sub = "Gleti's Knife", range = "Annihilator", ammo = "Chrono Bullet"} -- Perun +1/Ternion Dagger +1
 
 	sets.TP.Normal = {
 		head = "Mummu Bonnet +2",
@@ -127,8 +137,8 @@ function get_sets()
 	sets.WS_Default = {
 		head = "Orion Beret +3",
 		neck = "Scout's Gorget", -- neck="Fotia Gorget",
-		left_ear = "Moonshade Earring",
-		right_ear = "Enervating Earring", -- right_ear="Ishvara Earring",
+		left_ear = "Enervating Earring", -- left_ear="Ishvara Earring",
+		right_ear = "Moonshade Earring",
 		body = "Nyame Mail", -- body="Ikenga's Vest",
 		hands = "Nyame Gauntlets",
 		left_ring = "Ephramad's Ring",
@@ -154,6 +164,14 @@ function get_sets()
 		neck = "Light Gorget", -- Fotia
 		-- body="Amini Caban +3",
 		waist = "Light Belt", -- Fotia
+	}
+
+	sets.WS.Coronach = {
+		-- neck = "Breeze Gorget", -- Fotia/Scout's +2
+		-- left_ear = "Ishvara Earring",
+		-- right_ear = "Amini Earring +1/2"
+		-- body="Amini Caban +3",
+		waist = "Breeze Belt", -- Fotia
 	}
 
 	sets.Idle = {
@@ -277,7 +295,7 @@ function self_command(command)
 				Weapon_mode = 1
 			else
 				equip(sets.TP[TP_map[TP_mode]])
-				Weapon_mode = 2
+				Weapon_mode = 3
 			end
 		else
 			equip(sets.Idle)
