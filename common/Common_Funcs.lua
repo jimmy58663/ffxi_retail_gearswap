@@ -1,4 +1,5 @@
 local res = require("resources")
+local texts = require("texts")
 local Common_Funcs = {}
 
 local party_indices = S {
@@ -48,6 +49,23 @@ end
 
 function Common_Funcs.Update_Gear()
 	aftercast()
+end
+
+function Common_Funcs.Print_Table(tbl, prefix)
+	prefix = prefix or ""
+	if type(tbl) ~= "table" then
+		windower.add_to_chat(prefix .. tostring(tbl))
+		return
+	end
+
+	for key, value in pairs(tbl) do
+		if type(value) == "table" then
+			windower.add_to_chat(prefix .. key .. ": ")
+			Common_Funcs.Print_Table(value, prefix .. "  ")
+		else
+			windower.add_to_chat(prefix .. key .. ": " .. tostring(value))
+		end
+	end
 end
 
 return Common_Funcs

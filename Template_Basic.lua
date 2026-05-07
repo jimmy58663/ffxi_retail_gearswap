@@ -1,8 +1,3 @@
-include("organizer-lib")
-
-local Craft = include("Craft")
-local Common_Funcs = include("Common_Funcs")
-
 function get_sets()
 	sets.JA = {}
 	-- sets.JA.Berserk = {body="Pumm. Lorica +2", back={ name="Cichol's Mantle", augments={'Accuracy+20 Attack+20','"Dbl.Atk."+10','DEX+20'}}}
@@ -27,7 +22,6 @@ function get_sets()
 	sets.TH = {head = "Wh. Rarab Cap +1"}
 
 	sets.WS = {}
-	sets.WS_Default = {}
 
 	sets.WS["Savage Blade"] = {
 		-- legs="Boii Cuisses +1",
@@ -66,7 +60,7 @@ function midcast(spell)
 	if sets.JA[spell.english] then
 		equip(sets.JA[spell.english])
 	elseif spell.prefix == "/weaponskill" then
-		equip(sets.WS_Default)
+		equip(sets.WS)
 		if sets.WS[spell.english] then
 			equip(sets.WS[spell.english])
 		end
@@ -111,10 +105,8 @@ function self_command(command)
 		end
 		equip(sets.Weapon[Weapon_map[Weapon_mode]])
 		windower.add_to_chat("Weapon mode is now: " .. Weapon_map[Weapon_mode])
-	elseif string.lower(command:contains("craft")) then
-		Craft.handle_command(command)
 	elseif command:lower() == "update" then
-		Common_Funcs.Update_Gear()
+		aftercast()
 	end
 
 end
@@ -138,6 +130,6 @@ end
 function buff_change(buff, gain)
 	buff_name = buff:lower()
 	if buff_name == "encumbrance" and not gain then
-		Common_Funcs.Update_Gear()
+		aftercast()
 	end
 end
