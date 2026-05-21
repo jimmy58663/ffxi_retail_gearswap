@@ -22,8 +22,9 @@ function get_sets()
 	-- sets.JA["Azure Lore"] = {hands="Luh. Bazubands +1"}
 
 	sets.TP = {}
+	Movement = false
 
-	TP_map = {[1] = "Hybrid", [2] = "DT"}
+	TP_map = {[1] = "Hybrid", [2] = "Learning"}
 	TP_mode = 1
 
 	Weapon_map = {[1] = "Naegling", [2] = "Maxentius", [3] = "Nuke"}
@@ -39,6 +40,25 @@ function get_sets()
 		head = "Hashishin Kavuk +2",
 		body = "Hashishin Mintan +2",
 		hands = "Hashi. Bazu. +2",
+		legs = "Hashishin Tayt +2",
+		feet = "Hashi. Basmak +2",
+		neck = "Elite Royal Collar",
+		waist = "Sailfi Belt +1",
+		left_ear = "Alabaster Earring",
+		right_ear = "Brutal Earring",
+		left_ring = "Gelatinous Ring +1",
+		right_ring = "Chirich Ring +1",
+		back = {
+			name = "Rosmerta's Cape",
+			augments = {"DEX+20", "Accuracy+20 Attack+20", "\"Dbl.Atk.\"+10", "Phys. dmg. taken-10%"},
+		},
+	}
+
+	sets.TP.Learning = {
+		ammo = "Coiste Bodhar",
+		head = "Hashishin Kavuk +2",
+		body = "Hashishin Mintan +2",
+		hands = "Assim. Bazu. +1",
 		legs = "Hashishin Tayt +2",
 		feet = "Hashi. Basmak +2",
 		neck = "Elite Royal Collar",
@@ -96,6 +116,8 @@ function get_sets()
 			augments = {"DEX+20", "Accuracy+20 Attack+20", "\"Dbl.Atk.\"+10", "Phys. dmg. taken-10%"},
 		},
 	}
+
+	sets.Movement = {legs = "Carmine Cuisses +1"}
 
 	sets.DT = {
 		ammo = "Crepuscular Pebble",
@@ -285,6 +307,9 @@ function aftercast(spell)
 		equip(sets.TP[TP_map[TP_mode]])
 	else
 		equip(sets.Idle)
+		if Movement then
+			equip(sets.Movement)
+		end
 	end
 	equip(sets.Weapon[Weapon_map[Weapon_mode]])
 end
@@ -292,6 +317,9 @@ end
 function status_change(new, old)
 	if T {"Idle", "Resting"}:contains(new) then
 		equip(sets.Idle)
+		if Movement then
+			equip(sets.Movement)
+		end
 	elseif new == "Engaged" then
 		equip(sets.TP[TP_map[TP_mode]])
 	end
@@ -329,6 +357,10 @@ function self_command(command)
 		Craft.handle_command(command)
 	elseif cmd_array[1] == "update" then
 		Common_Funcs.Update_Gear()
+	elseif cmd_array[1] == "movement" then
+		Movement = not Movement
+		windower.add_to_chat("Movement mode is now: " .. (Movement and "ON" or "OFF"))
+		aftercast()
 	elseif cmd_array[1] == "display" then
 		if cmd_array[2] == "show" then
 			Common_Funcs.Show_Display()
