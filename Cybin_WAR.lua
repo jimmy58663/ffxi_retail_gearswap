@@ -153,7 +153,8 @@ function get_sets()
 		feet = "Pumm. Calligae +3",
 	}
 
-	sets.Phalanx = {
+	sets.Midcast = {}
+	sets.Midcast.Phalanx = {
 		-- head="Valorous Mask",
 		body = "Valorous Mail",
 		hands = "Souv. Handsch. +1",
@@ -290,34 +291,6 @@ function sub_job_change(new, old)
 	equip(sets.Weapon[Weapon_map[Weapon_mode]])
 	send_command("@wait 5;input /lockstyleset 2")
 end
-
--- Reaction code for Phalanx
-windower.register_event("action", function(act)
-	local actor = windower.ffxi.get_mob_by_id(act.actor_id)
-	local self = windower.ffxi.get_player()
-	local category = act.category
-	-- Category 8 is Casting Start: https://github.com/Windower/Lua/blob/dev/addons/libs/packets/fields.lua#L1800-L1813
-	if category == 8 then
-		local spellID = act.targets[1].actions[1].param
-		local spell = res.spells[spellID]
-		if spell and (spell.en == "Phalanx" or spell.en == "Phalanx II") then
-			-- Loop through targets to see if WE are being hit (supports Accession)
-			for _, target in ipairs(act.targets) do
-				if target.id == self.id then
-					equip(sets.Phalanx)
-					coroutine.schedule(function()
-						if player.status == "Engaged" then
-							equip(sets.TP[TP_map[TP_mode]])
-						else
-							equip(sets.Idle)
-						end
-					end, 3)
-					break
-				end
-			end
-		end
-	end
-end)
 
 function buff_change(buff, gain)
 	buff_name = buff:lower()
