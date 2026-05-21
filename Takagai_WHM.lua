@@ -93,8 +93,8 @@ function get_sets()
 
 	sets.precast.EnhancingMagic = {}
 	-- Midcast Sets
-	sets.midcast = {}
-	sets.midcast.Haste = {
+	sets.Midcast = {}
+	sets.Midcast.Haste = {
 		ammo = "Incantor Stone",
 		head = "Bunzi's Hat",
 		body = "Inyanga Jubbah +2",
@@ -103,7 +103,7 @@ function get_sets()
 		feet = "Ebers Duckbills +2",
 	}
 
-	sets.midcast.Debuff = {
+	sets.Midcast.Debuff = {
 		main = "Pandit's Staff",
 		sub = "Enki Strap",
 		ammo = "Hydrocera",
@@ -120,7 +120,7 @@ function get_sets()
 		feet = "Ebers Duckbills +2",
 	}
 
-	sets.midcast.Stun = {
+	sets.Midcast.Stun = {
 		main = "Pandit's Staff",
 		sub = "Enki Strap",
 		ammo = "Hydrocera",
@@ -137,7 +137,7 @@ function get_sets()
 		feet = "Ebers Duckbills +2",
 	}
 
-	sets.midcast.Cure = {
+	sets.Midcast.Cure = {
 		main = "Daybreak", -- 30%
 		sub = "Culminus", -- 10% SIRD
 		ammo = "Kalboron Stone",
@@ -158,7 +158,7 @@ function get_sets()
 		feet = "Ebers Duckbills +2", -- 10% DT
 	}
 
-	sets.midcast.Regen = {
+	sets.Midcast.Regen = {
 		main = "Bolelabunga",
 		sub = "Archduke's Shield",
 		head = "Inyanga Tiara +2",
@@ -173,7 +173,7 @@ function get_sets()
 		feet = "Bunzi's Sabots",
 	}
 
-	sets.midcast.Stoneskin = {
+	sets.Midcast.Stoneskin = {
 		main = "Pandit's Staff",
 		sub = "Enki Strap",
 		ammo = "Kalboron Stone",
@@ -190,7 +190,7 @@ function get_sets()
 		feet = "Ebers Duckbills +2",
 	}
 
-	sets.midcast.Cursna = {
+	sets.Midcast.Cursna = {
 		main = "Pandit's Staff",
 		sub = "Enki Strap",
 		ammo = "Kalboron Stone",
@@ -211,11 +211,11 @@ function get_sets()
 		feet = "Gende. Galosh. +1",
 	}
 
-	sets.midcast.Auspice = {waist = "Embla Sash", feet = "Ebers Duckbills +2"}
+	sets.Midcast.Auspice = {waist = "Embla Sash", feet = "Ebers Duckbills +2"}
 
-	sets.midcast.StatusRemoval = {head = "Ebers Cap +2", hands = "Ebers Mitts +2", legs = "Ebers Pant. +2"}
+	sets.Midcast.StatusRemoval = {head = "Ebers Cap +2", hands = "Ebers Mitts +2", legs = "Ebers Pant. +2"}
 
-	sets.midcast.BarElement = {
+	sets.Midcast.BarElement = {
 		head = "Ebers Cap +2",
 		body = "Ebers Bliaut +2",
 		hands = "Ebers Mitts +2",
@@ -228,7 +228,7 @@ function get_sets()
 		feet = "Ebers Duckbills +2",
 	}
 
-	sets.midcast.BarStatus = {waist = "Embla Sash"}
+	sets.Midcast.BarStatus = {waist = "Embla Sash"}
 	-- Aftercast Sets
 	sets.DT = {
 		ammo = "Kalboron Stone",
@@ -359,16 +359,16 @@ function precast(spell)
 end
 
 function midcast(spell)
-	if sets.midcast[spell.english] then
-		equip(sets.midcast[spell.english])
+	if sets.Midcast[spell.english] then
+		equip(sets.Midcast[spell.english])
 	elseif string.find(spell.english, "Cur") then
-		equip(sets.midcast.Cure)
+		equip(sets.Midcast.Cure)
 	elseif string.find(spell.english, "Regen") then
-		equip(sets.midcast.Regen)
+		equip(sets.Midcast.Regen)
 	elseif spell.skill == "Enfeebling Magic" then
-		equip(sets.midcast.Debuff)
+		equip(sets.Midcast.Debuff)
 	elseif Spell_Map[spell.english] == "StatusRemoval" then
-		equip(sets.midcast.StatusRemoval)
+		equip(sets.Midcast.StatusRemoval)
 	elseif spell.prefix == "/weaponskill" then
 		equip(sets.WS_Default)
 		if sets.WS[spell.english] then
