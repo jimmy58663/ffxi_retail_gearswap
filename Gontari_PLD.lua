@@ -227,6 +227,20 @@ function precast(spell)
 	if spell.english == "Spectral Jig" and buffactive.sneak then
 		send_command("cancel sneak")
 	end
+
+	-- Check if you are casting Flash
+	if spell.english == "Flash" then
+		-- Get information on Divine Emblem's current cooldown
+		local abil_recasts = windower.ffxi.get_ability_recasts()
+		-- Divine Emblem's ability ID is 80
+		if abil_recasts[80] == 0 and not buffactive["Divine Emblem"] then
+			-- Stop the current Flash cast from going through yet
+			cancel_spell()
+			-- Force your character to use Divine Emblem
+			send_command("input /ja \"Divine Emblem\" <me>; wait 1.2; input /ma \"Flash\" " .. spell.target.raw)
+			return
+		end
+	end
 end
 
 function midcast(spell)
