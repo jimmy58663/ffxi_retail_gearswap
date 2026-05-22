@@ -362,4 +362,15 @@ Maps.BlueMagic.Buffs = {
 	["Reactor Cool"] = "SKILL",
 }
 
+Maps.Elements = {
+	Fire = {obi = "Anrin Obi", weather = "Firestorm", day = "Firesday"},
+	Earth = {obi = "Dorin Obi", weather = "Sandstorm", day = "Earthsday"},
+	Water = {obi = "Suirin Obi", weather = "Rainstorm", day = "Watersday"},
+	Wind = {obi = "Furin Obi", weather = "Windstorm", day = "Windsday"},
+	Ice = {obi = "Hyorin Obi", weather = "Hailstorm", day = "Iceday"},
+	Lightning = {obi = "Rairin Obi", weather = "Thunderstorm", day = "Lightningday"},
+	Light = {obi = "Korin Obi", weather = "Aurorastorm", day = "Lightsday"},
+	Dark = {obi = "Anrin Obi", weather = "Voidstorm", day = "Darksday"},
+}
+
 return Maps
