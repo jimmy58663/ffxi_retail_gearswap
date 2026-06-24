@@ -30,7 +30,7 @@ Craft.Sets.Clothcraft = {head = "Magnifying Specs.", body = "Weaver's Apron"}
 
 Craft.Sets.Leathercraft = {}
 
-Craft.Sets.Bonecraft = {}
+Craft.Sets.Bonecraft = {neck = "Bone. Torque"}
 
 Craft.Sets.Alchemy = {}
 
