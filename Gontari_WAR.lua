@@ -150,7 +150,8 @@ function get_sets()
 		feet = "Sakpata's Leggings",
 	}
 
-	sets.Phalanx = {
+	sets.Midcast = {}
+	sets.Midcast.Phalanx = {
 		-- head="Valorous Mask",
 		-- body="Valorous Mail",
 		hands = "Souv. Handsch. +1",

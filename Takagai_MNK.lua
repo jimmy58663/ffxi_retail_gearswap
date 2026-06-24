@@ -96,7 +96,7 @@ function get_sets()
 		back = {name = "Segomo's Mantle", augments = {"STR+20", "Accuracy+20 Attack+20", "\"Dbl.Atk.\"+10"}},
 	}
 
-	sets.WS["Tonado Kick"] = {feet = "Anch. Gaiters +3"}
+	sets.WS["Tornado Kick"] = {feet = "Anch. Gaiters +3"}
 
 	sets.WS["Dragon Kick"] = {feet = "Anch. Gaiters +3"}
 

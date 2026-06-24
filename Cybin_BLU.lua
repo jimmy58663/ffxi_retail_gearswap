@@ -32,8 +32,8 @@ function get_sets()
 
 	sets.Weapon = {}
 	sets.Weapon.Naegling = {main = "Naegling", sub = "Thibron"}
-	sets.Weapon.Maxentius = {main = "Kaja Rod", sub = "Thibron"}
-	sets.Weapon.Nuke = {main = "Bunzi's Rod", sub = "Kaja Rod"}
+	sets.Weapon.Maxentius = {main = "Maxentius", sub = "Thibron"}
+	sets.Weapon.Nuke = {main = "Bunzi's Rod", sub = "Maxentius"}
 
 	sets.TP.Hybrid = {
 		ammo = "Coiste Bodhar",

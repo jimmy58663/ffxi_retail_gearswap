@@ -15,8 +15,8 @@ function get_sets()
 	mode_map = {[1] = "Support", [2] = "Melee"}
 	mode = 1
 
-	Weapon_map = {[1] = "Maxentius", [2] = "Pandit", [3] = "LorgMor"}
-	Weapon_mode = 1
+	Weapon_map = {[1] = "Maxentius", [2] = "Pandit", [3] = "Yagrush", [4] = "LorgMor"}
+	Weapon_mode = 3
 
 	Idle_map = {[1] = "Refresh", [2] = "DT"}
 	Idle_mode = 1
@@ -89,7 +89,7 @@ function get_sets()
 		legs = "Ebers Pant. +2", -- 14%
 	}
 
-	sets.precast.StatusRemoval = {legs = "Ebers Pant. +2"}
+	sets.precast.StatusRemoval = {main = "Yagrush", sub = "Archduke's Shield", legs = "Ebers Pant. +2"}
 
 	sets.precast.EnhancingMagic = {}
 	-- Midcast Sets
@@ -191,8 +191,8 @@ function get_sets()
 	}
 
 	sets.Midcast.Cursna = {
-		main = "Pandit's Staff",
-		sub = "Enki Strap",
+		main = "Yagrush",
+		sub = "Archduke's Shield",
 		ammo = "Kalboron Stone",
 		head = "Inyanga Tiara +2",
 		neck = "Clr. Torque +1",
@@ -213,7 +213,13 @@ function get_sets()
 
 	sets.Midcast.Auspice = {waist = "Embla Sash", feet = "Ebers Duckbills +2"}
 
-	sets.Midcast.StatusRemoval = {head = "Ebers Cap +2", hands = "Ebers Mitts +2", legs = "Ebers Pant. +2"}
+	sets.Midcast.StatusRemoval = {
+		main = "Yagrush",
+		sub = "Archduke's Shield",
+		head = "Ebers Cap +2",
+		hands = "Ebers Mitts +2",
+		legs = "Ebers Pant. +2",
+	}
 
 	sets.Midcast.BarElement = {
 		head = "Ebers Cap +2",
@@ -321,6 +327,7 @@ function get_sets()
 	sets.Weapon = {}
 	sets.Weapon.Maxentius = {main = "Maxentius", sub = "Archduke's Shield"}
 	sets.Weapon.Pandit = {main = "Pandit's Staff", sub = "Enki Strap"}
+	sets.Weapon.Yagrush = {main = "Yagrush", sub = "Archduke's Shield"}
 	sets.Weapon.LorgMor = {main = "Lorg Mor", sub = "Archduke's Shield"}
 
 	sets.WS = {}

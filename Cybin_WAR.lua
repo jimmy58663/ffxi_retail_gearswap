@@ -174,19 +174,28 @@ function precast(spell)
 	if sets.JA[spell.english] then
 		equip(sets.JA[spell.english])
 	end
+
+	if spell.prefix == "/weaponskill" then
+		equip(sets.WS_Default)
+		if sets.WS[spell.english] then
+			equip(sets.WS[spell.english])
+		end
+	end
 end
 
 function midcast(spell)
 	if sets.JA[spell.english] then
 		equip(sets.JA[spell.english])
-	elseif spell.prefix == "/weaponskill" then
+	elseif spell.english:contains("Dia") then
+		equip(sets.TH)
+	end
+
+	--[[if spell.prefix == "/weaponskill" then
 		equip(sets.WS_Default)
 		if sets.WS[spell.english] then
 			equip(sets.WS[spell.english])
 		end
-	elseif spell.english:contains("Dia") then
-		equip(sets.TH)
-	end
+	end--]]
 end
 
 function aftercast(spell)

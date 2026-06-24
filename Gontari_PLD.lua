@@ -18,10 +18,11 @@ function get_sets()
 	TP_map = {[1] = "Tank", [2] = "DPS", [3] = "DT"}
 	TP_mode = 1
 
-	Weapon_map = {[1] = "Sakpata", [2] = "Naegling", [3] = "Caliburnus"}
+	Weapon_map = {[1] = "Burtgang", [2] = "Naegling", [3] = "Caliburnus", [4] = "Sakpata"}
 	Weapon_mode = 1
 
 	sets.Weapon = {}
+	sets.Weapon.Burtgang = {main = "Burtgang"}
 	sets.Weapon.Sakpata = {main = "Sakpata's Sword"}
 	sets.Weapon.Naegling = {main = "Naegling"}
 	sets.Weapon.Caliburnus = {main = "Caliburnus"}
@@ -203,8 +204,8 @@ function get_sets()
 	sets.Midcast.Enhancing = {}
 
 	sets.Midcast.Phalanx = {
-		main = "Sakpata's Sword", -- +5
-		sub = "Priwen", -- +3
+		-- main = "Sakpata's Sword", -- +5
+		-- sub = "Priwen", -- +3
 		hands = "Souv. Handsch. +1", -- +5
 		legs = "Sakpata's Cuisses", -- +5
 		feet = "Souveran Schuhs +1", -- +5
