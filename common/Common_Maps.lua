@@ -362,4 +362,9 @@ Maps.BlueMagic.Buffs = {
 	["Reactor Cool"] = "SKILL",
 }
 
+Maps.SkillchainEffects = S {
+	288, 289, 290, 291, 292, 293, 294, 295, 296, 297, 298, 299, 300, 301, 385, 386, 387, 388, 389, 390, 391, 392, 393, 394,
+ 395, 396, 397, 398,
+}
+
 return Maps

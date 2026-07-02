@@ -3,24 +3,7 @@ local texts = require("texts")
 local Common_Funcs = {}
 
 local party_indices = S {
-	"p0",
-	"p1",
-	"p2",
-	"p3",
-	"p4",
-	"p5",
-	"a10",
-	"a11",
-	"a12",
-	"a13",
-	"a14",
-	"a15",
-	"a20",
-	"a21",
-	"a22",
-	"a23",
-	"a24",
-	"a25",
+	"p0", "p1", "p2", "p3", "p4", "p5", "a10", "a11", "a12", "a13", "a14", "a15", "a20", "a21", "a22", "a23", "a24", "a25",
 }
 
 function Common_Funcs.Is_In_Party(id)
@@ -48,7 +31,8 @@ function Common_Funcs.Drop_Item(item_name)
 end
 
 function Common_Funcs.Update_Gear()
-	aftercast()
+	local spell = {}
+	aftercast(spell)
 end
 
 function Common_Funcs.Print_Table(tbl, prefix)
