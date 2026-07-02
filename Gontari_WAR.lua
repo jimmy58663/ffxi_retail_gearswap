@@ -49,7 +49,7 @@ function get_sets()
 
 	sets.Weapon = {}
 	sets.Weapon.Naegling = {main = "Naegling", sub = "Blurred Shield +1"}
-	sets.Weapon.Shining = {main = "Kaja Lance", sub = "Utu Grip"}
+	sets.Weapon.Shining = {main = "Shining One", sub = "Utu Grip"}
 	sets.Weapon.Loxotic = {main = "Loxotic Mace +1", sub = "Blurred Shield +1"}
 	-- sets.Weapon.Chango = {main="Chango",sub="Utu Grip",}
 
