@@ -96,7 +96,7 @@ function get_sets()
 	TP_map = {[1] = "Normal", [2] = "Hybrid", [3] = "DT"}
 	TP_mode = 2
 
-	Weapon_map = {[1] = "Earp", [2] = "Naegling", [3] = "NaeglingDW", [4] = "OnionDW"}
+	Weapon_map = {[1] = "Earp", [2] = "Naegling", [3] = "Tauret", [4] = "NaeglingDW", [5] = "OnionDW"}
 	Weapon_mode = 1
 
 	sets.Weapon = {}
@@ -107,6 +107,7 @@ function get_sets()
 		ammo = "Eminent Bullet",
 	}
 	sets.Weapon.Naegling = {main = "Naegling", sub = "Nusku Shield", range = "Ataktos", ammo = "Eminent Bullet"}
+	sets.Weapon.Tauret = {main = "Tauret", sub = "Nusku Shield", range = "Compensator", ammo = "Eminent Bullet"}
 	sets.Weapon.NaeglingDW = {main = "Naegling", sub = "Gleti's Knife", range = "Ataktos", ammo = "Eminent Bullet"}
 	sets.Weapon.OnionDW = {main = "Onion Sword III", sub = "Gleti's Knife", range = "Ataktos", ammo = "Eminent Bullet"}
 
@@ -286,6 +287,24 @@ function get_sets()
 		right_ring = "Meghanada Ring", -- right_ring="Dingir Ring",
 		back = {name = "Camulus's Mantle", augments = {"AGI+20", "Mag. Acc+20 /Mag. Dmg.+20", "Weapon skill damage +10%"}},
 		waist = "Eschan Stone", -- waist="Skymir Cord +1",
+	}
+
+	sets.WS["Evisceration"] = {
+		head = "Mummu Bonnet +2",
+		neck = "Elite Royal Collar",
+		left_ear = "Alabaster Earring",
+		right_ear = "Crep. Earring",
+		body = "Meg. Cuirie +2",
+		hands = "Chasseur's Gants +2",
+		left_ring = "Mummu Ring",
+		right_ring = "Murky Ring",
+		back = {
+			name = "Camulus's Mantle",
+			augments = {"DEX+20", "Accuracy+20 Attack+20", "\"Dbl.Atk.\"+10", "Phys. dmg. taken-10%"},
+		},
+		waist = "Sailfi Belt +1",
+		legs = "Mummu Kecks +2",
+		feet = "Mummu Gamash. +2",
 	}
 
 	sets.Idle = {
