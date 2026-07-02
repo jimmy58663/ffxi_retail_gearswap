@@ -4,7 +4,9 @@ local res = require("resources")
 local Craft = include("Craft")
 local Common_Maps = include("Common_Maps")
 local Common_Funcs = include("Common_Funcs")
-local MagicBurstWindow = false
+local MagicBurst_Window = false
+local MagicBurst_Window_Expires = 0
+local MagicBurst_Timer_Running = false
 
 function get_sets()
 	sets.JA = {}
@@ -355,7 +357,7 @@ function midcast(spell)
 		elseif Common_Maps.Nuke[spell.english] == "HighNuke" then
 			equip(sets.Midcast.HighNuke)
 		end
-		if MagicBurstWindow then
+		if MagicBurst_Window then
 			equip(sets.Midcast.MagicBurst)
 		end
 		affinity_check(spell.element)
@@ -461,7 +463,6 @@ function sub_job_change(new, old)
 	send_command("@wait 5;input /lockstyleset 3")
 end
 
--- Action Packet Parsing
 windower.register_event("incoming chunk", function(id, data)
 	if id == 0x28 then -- Action Packet
 		local packet = windower.packets.parse_action(data)
@@ -469,47 +470,23 @@ windower.register_event("incoming chunk", function(id, data)
 			for _, target in pairs(packet.targets) do
 				for _, action in pairs(target.actions) do
 					-- Check for Skillchain message IDs (usually 288-302, 385-402, etc.)
-					if action.has_add_effect and S {
-						288,
-						289,
-						290,
-						291,
-						292,
-						293,
-						294,
-						295,
-						296,
-						297,
-						298,
-						299,
-						300,
-						301,
-						385,
-						386,
-						387,
-						388,
-						389,
-						390,
-						391,
-						392,
-						393,
-						394,
-						395,
-						396,
-						397,
-						398,
-					}:contains(action.add_effect_message) then
+					if action.has_add_effect and Common_Maps.SkillchainEffects:contains(action.add_effect_message) then
 						-- Activate Magic Burst Mode
-						MagicBurstWindow = true
+						MagicBurst_Window = true
 						add_to_chat(204, "Skillchain Detected! Magic Burst Window Open.")
-						-- Start a 10-second timer to turn off Burst Mode automatically
-						if mb_timer then
-							coroutine.close(mb_timer)
+						MagicBurst_Window_Expires = os.time() + 10 -- Set the expiration time for the Magic Burst window
+
+						if not MagicBurst_Timer_Running then
+							MagicBurst_Timer_Running = true
+							coroutine.schedule(function()
+								while os.clock() < MagicBurst_Window_Expires do
+									coroutine.sleep(0.5)
+								end
+								MagicBurst_Window = false
+								MagicBurst_Timer_Running = false
+								add_to_chat(123, "Magic Burst Window Closed.")
+							end, 0.5)
 						end
-						mb_timer = coroutine.schedule(function()
-							MagicBurstWindow = false
-							add_to_chat(123, "Magic Burst Window Closed.")
-						end, 10)
 					end
 				end
 			end
@@ -518,7 +495,7 @@ windower.register_event("incoming chunk", function(id, data)
 end)
 
 function buff_change(buff, gain)
-	buff_name = buff:lower()
+	local buff_name = buff:lower()
 	if buff_name == "encumbrance" and not gain then
 		Common_Funcs.Update_Gear()
 	end

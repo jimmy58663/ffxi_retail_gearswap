@@ -4,7 +4,9 @@ local res = require("resources")
 local Craft = include("Craft")
 local Common_Maps = include("Common_Maps")
 local Common_Funcs = include("Common_Funcs")
-local MagicBurstWindow = false
+local MagicBurst_Window = false
+local MagicBurst_Window_Expires = 0
+local MagicBurst_Timer_Running = false
 
 function get_sets()
 	sets.JA = {}
@@ -25,38 +27,10 @@ function get_sets()
 	TP_mode = 1
 
 	LowTierNukes = S {
-		"Stone",
-		"Water",
-		"Aero",
-		"Fire",
-		"Blizzard",
-		"Thunder",
-		"Stone II",
-		"Water II",
-		"Aero II",
-		"Fire II",
-		"Blizzard II",
-		"Thunder II",
-		"Stonega",
-		"Waterga",
-		"Aeroga",
-		"Firaga",
-		"Blizzaga",
-		"Thundaga",
-		"Geohelix",
-		"Hydrohelix",
-		"Anemohelix",
-		"Pyrohelix",
-		"Cryohelix",
-		"Ionohelix",
-		"Noctohelix",
-		"Luminohelix",
-		"Stonera",
-		"Watera",
-		"Aera",
-		"Fira",
-		"Blizzara",
-		"Thundara",
+		"Stone", "Water", "Aero", "Fire", "Blizzard", "Thunder", "Stone II", "Water II", "Aero II", "Fire II", "Blizzard II",
+  "Thunder II", "Stonega", "Waterga", "Aeroga", "Firaga", "Blizzaga", "Thundaga", "Geohelix", "Hydrohelix",
+  "Anemohelix", "Pyrohelix", "Cryohelix", "Ionohelix", "Noctohelix", "Luminohelix", "Stonera", "Watera", "Aera", "Fira",
+  "Blizzara", "Thundara",
 	}
 	-- Precast Sets
 	sets.precast = {}
