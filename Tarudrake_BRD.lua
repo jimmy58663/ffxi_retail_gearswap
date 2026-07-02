@@ -80,33 +80,39 @@ function get_sets()
 	}
 
 	sets.Midcast.Debuff = {
-		head = "Brioso Roundlet +2",
+		head = "Brioso Roundlet +3",
 		neck = "Mnbw. Whistle +1",
-		body = "Brioso Justau. +2",
-		hands = "Inyan. Dastanas +2", -- "Brioso Cuffs +3",
+		-- left_ear="Regal Earring",
+		right_ear = "Crep. Earring", -- Fili Earring
+		body = "Brioso Justau. +3",
+		hands = "Brioso Cuffs +3",
 		left_ring = "Stikini Ring",
 		right_ring = "Stikini Ring",
 		back = {
 			name = "Intarabus's Cape",
 			augments = {"CHR+20", "Mag. Acc+20 /Mag. Dmg.+20", "CHR+10", "\"Fast Cast\"+10", "Phys. dmg. taken-10%"},
 		},
-		legs = "Brioso Cannions +2",
-		feet = "Brioso Slippers +2",
+		-- waist="Null Belt",
+		legs = "Brioso Cannions +3",
+		feet = "Brioso Slippers +3",
 	}
 
 	sets.Midcast.Stun = {
-		head = "Brioso Roundlet +2",
+		head = "Brioso Roundlet +3",
 		neck = "Mnbw. Whistle +1",
-		body = "Brioso Justau. +2",
-		hands = "Inyan. Dastanas +2", -- "Brioso Cuffs +3",
+		-- left_ear="Regal Earring",
+		right_ear = "Crep. Earring", -- Fili Earring
+		body = "Brioso Justau. +3",
+		hands = "Brioso Cuffs +3",
 		left_ring = "Stikini Ring",
 		right_ring = "Stikini Ring",
 		back = {
 			name = "Intarabus's Cape",
 			augments = {"CHR+20", "Mag. Acc+20 /Mag. Dmg.+20", "CHR+10", "\"Fast Cast\"+10", "Phys. dmg. taken-10%"},
 		},
-		legs = "Brioso Cannions +2",
-		feet = "Brioso Slippers +2",
+		-- waist="Null Belt",
+		legs = "Brioso Cannions +3",
+		feet = "Brioso Slippers +3",
 	}
 
 	sets.Midcast.Cure = {
@@ -140,38 +146,38 @@ function get_sets()
 
 	sets.Midcast.songs = {}
 	sets.Midcast.songs.Default = {
-		main = "Carnwenhan",
-		neck = "Mnbw. Whistle +1",
+		main = "Carnwenhan", -- 50% duration
 		head = "Fili Calot +2",
-		body = "Fili Hongreline +2",
+		neck = "Mnbw. Whistle +1", -- Songs+3, 30% duration
+		body = "Fili Hongreline +2", -- 13% duration
 		hands = "Fili Manchettes +2",
 		back = {
 			name = "Intarabus's Cape",
 			augments = {"CHR+20", "Mag. Acc+20 /Mag. Dmg.+20", "CHR+10", "\"Fast Cast\"+10", "Phys. dmg. taken-10%"},
 		},
-		legs = "Inyanga Shalwar +2",
-		feet = "Brioso Slippers +2",
+		legs = "Inyanga Shalwar +2", -- 17% duration
+		feet = "Brioso Slippers +3", -- 15% duration
 	}
 
 	sets.Midcast.songs.Debuff = {
-		head = "Brioso Roundlet +2",
-		-- left_ear="",
-		-- right_ear="",
-		body = "Fili Hongreline +2",
-		hands = "Fili Manchettes +2",
-		left_ring = "Inyanga Ring",
+		head = "Brioso Roundlet +3",
+		neck = "Mnbw. Whistle +1",
+		-- left_ear="", -- Regal
+		right_ear = "Crep. Earring", -- Fili Earring
+		body = "Brioso Justau. +3",
+		hands = "Brioso Cuffs +3",
+		left_ring = "Stikini Ring",
 		right_ring = "Stikini Ring",
 		back = {
 			name = "Intarabus's Cape",
 			augments = {"CHR+20", "Mag. Acc+20 /Mag. Dmg.+20", "CHR+10", "\"Fast Cast\"+10", "Phys. dmg. taken-10%"},
 		},
-		waist = "Cascade Belt",
+		waist = "Cascade Belt", -- Null Belt
 		legs = "Inyanga Shalwar +2",
-		feet = "Brioso Slippers +2",
+		feet = "Brioso Slippers +3",
 	}
 
-	sets.Midcast.songs.Paeon = {head = "Brioso Roundlet +2"}
-	sets.Midcast.songs.Lullaby = {hands = "Brioso Cuffs +2"}
+	sets.Midcast.songs.Paeon = {head = "Brioso Roundlet +3"}
 	sets.Midcast.songs.Minuet = {body = "Fili Hongreline +2"}
 	sets.Midcast.songs.March = {hands = "Fili Manchettes +2"}
 	sets.Midcast.songs.Madrigal = {head = "Fili Calot +2"}
@@ -180,6 +186,24 @@ function get_sets()
 	sets.Midcast.songs.Ballad = {legs = "Fili Rhingrave +2"}
 	sets.Midcast.songs.Carol = {hands = "Mousai Gages +1"}
 	sets.Midcast.songs.Etude = {head = "Mousai Turban +1"}
+	sets.Midcast.songs.Lullaby = {
+		-- Need 567 skill for 7' radius, 648 skill for 8' radius
+		head = "Brioso Roundlet +3",
+		neck = "Mnbw. Whistle +1",
+		-- left_ear="Gersemi Earring",
+		-- right_ear="Darkside Earring",
+		body = "Brioso Justau. +3",
+		hands = "Brioso Cuffs +3",
+		left_ring = "Stikini Ring",
+		right_ring = "Stikini Ring",
+		back = {
+			name = "Intarabus's Cape",
+			augments = {"CHR+20", "Mag. Acc+20 /Mag. Dmg.+20", "CHR+10", "\"Fast Cast\"+10", "Phys. dmg. taken-10%"},
+		},
+		-- waist="Harfner's Sash",
+		legs = "Inyanga Shalwar +2",
+		feet = "Bihu Slippers +2",
+	}
 	-- Aftercast Sets
 	sets.Idle = {
 		range = "Gjallarhorn",
