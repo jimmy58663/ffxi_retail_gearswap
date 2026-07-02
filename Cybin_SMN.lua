@@ -1,145 +1,44 @@
 include("organizer-lib")
 
 local res = require("resources")
-local Craft = include("Craft")
-local Common_Maps = include("Common_Maps")
-local Common_Funcs = include("Common_Funcs")
+local Craft = include("Common/Craft")
+local Common_Maps = include("Common/Maps")
+local Common_Funcs = include("Common/Functions")
 
 FavorMode = false
 AutoBP = true
 
 BP_Phys = S {
-	"Punch",
-	"Rock Throw",
-	"Barracuda Dive",
-	"Claw",
-	"Axe Kick",
-	"Shock Strike",
-	"Camisado",
-	"Regal Scratch",
-	"Poison Nails",
-	"Moonlit Charge",
-	"Crescent Fang",
-	"Rock Buster",
-	"Tail Whip",
-	"Double Punch",
-	"Megalith Throw",
-	"Double Slap",
-	"Eclipse Bite",
-	"Mountain Buster",
-	"Spinning Dive",
-	"Predator Claws",
-	"Rush",
-	"Chaotic Strike",
-	"Crag Throw",
-	"Volt Strike",
+	"Punch", "Rock Throw", "Barracuda Dive", "Claw", "Axe Kick", "Shock Strike", "Camisado", "Regal Scratch",
+ "Poison Nails", "Moonlit Charge", "Crescent Fang", "Rock Buster", "Tail Whip", "Double Punch", "Megalith Throw",
+ "Double Slap", "Eclipse Bite", "Mountain Buster", "Spinning Dive", "Predator Claws", "Rush", "Chaotic Strike",
+ "Crag Throw", "Volt Strike",
 }
 BP_Hybrid = S {"Burning Strike", "Flaming Crush"}
 BP_Magic = S {
-	"Inferno",
-	"Earthen Fury",
-	"Tidal Wave",
-	"Aerial Blast",
-	"Diamond Dust",
-	"Judgment Bolt",
-	"Searing Light",
-	"Howling Moon",
-	"Ruinous Omen",
-	"Fire II",
-	"Stone II",
-	"Water II",
-	"Aero II",
-	"Blizzard II",
-	"Thunder II",
-	"Thunderspark",
-	"Somnolence",
-	"Meteorite",
-	"Fire IV",
-	"Stone IV",
-	"Water IV",
-	"Aero IV",
-	"Blizzard IV",
-	"Thunder IV",
-	"Nether Blast",
-	"Meteor Strike",
-	"Geocrush",
-	"Grand Fall",
-	"Wind Blade",
-	"Heavenly Strike",
-	"Thunderstorm",
-	"Level ? Holy",
-	"Holy Mist",
-	"Lunar Bay",
-	"Night Terror",
-	"Conflag Strike",
+	"Inferno", "Earthen Fury", "Tidal Wave", "Aerial Blast", "Diamond Dust", "Judgment Bolt", "Searing Light",
+ "Howling Moon", "Ruinous Omen", "Fire II", "Stone II", "Water II", "Aero II", "Blizzard II", "Thunder II",
+ "Thunderspark", "Somnolence", "Meteorite", "Fire IV", "Stone IV", "Water IV", "Aero IV", "Blizzard IV", "Thunder IV",
+ "Nether Blast", "Meteor Strike", "Geocrush", "Grand Fall", "Wind Blade", "Heavenly Strike", "Thunderstorm",
+ "Level ? Holy", "Holy Mist", "Lunar Bay", "Night Terror", "Conflag Strike",
 }
 BP_Debuff = S {
-	"Lunar Cry",
-	"Mewing Lullaby",
-	"Nightmare",
-	"Lunar Roar",
-	"Slowga",
-	"Ultimate Terror",
-	"Sleepga",
-	"Eerie Eye",
-	"Tidal Roar",
-	"Diamond Storm",
-	"Shock Squall",
-	"Pavor Nocturnus",
+	"Lunar Cry", "Mewing Lullaby", "Nightmare", "Lunar Roar", "Slowga", "Ultimate Terror", "Sleepga", "Eerie Eye",
+ "Tidal Roar", "Diamond Storm", "Shock Squall", "Pavor Nocturnus",
 }
 BP_Buff = S {
-	"Shining Ruby",
-	"Frost Armor",
-	"Rolling Thunder",
-	"Crimson Howl",
-	"Lightning Armor",
-	"Ecliptic Growl",
-	"Hastega",
-	"Noctoshield",
-	"Ecliptic Howl",
-	"Dream Shroud",
-	"Earthen Armor",
-	"Fleet Wind",
-	"Inferno Howl",
-	"Soothing Ruby",
-	"Heavenward Howl",
-	"Soothing Current",
-	"Hastega II",
-	"Crystal Blessing",
+	"Shining Ruby", "Frost Armor", "Rolling Thunder", "Crimson Howl", "Lightning Armor", "Ecliptic Growl", "Hastega",
+ "Noctoshield", "Ecliptic Howl", "Dream Shroud", "Earthen Armor", "Fleet Wind", "Inferno Howl", "Soothing Ruby",
+ "Heavenward Howl", "Soothing Current", "Hastega II", "Crystal Blessing",
 }
 BP_Other = S {
-	"Healing Ruby",
-	"Raise II",
-	"Aerial Armor",
-	"Reraise II",
-	"Whispering Wind",
-	"Glittering Ruby",
-	"Earthen Ward",
-	"Spring Water",
-	"Healing Ruby II",
+	"Healing Ruby", "Raise II", "Aerial Armor", "Reraise II", "Whispering Wind", "Glittering Ruby", "Earthen Ward",
+ "Spring Water", "Healing Ruby II",
 }
 AvatarList = S {
-	"Shiva",
-	"Ramuh",
-	"Garuda",
-	"Leviathan",
-	"Diabolos",
-	"Titan",
-	"Fenrir",
-	"Ifrit",
-	"Carbuncle",
-	"Fire Spirit",
-	"Air Spirit",
-	"Ice Spirit",
-	"Thunder Spirit",
-	"Light Spirit",
-	"Dark Spirit",
-	"Earth Spirit",
-	"Water Spirit",
-	"Cait Sith",
-	"Alexander",
-	"Odin",
-	"Atomos",
+	"Shiva", "Ramuh", "Garuda", "Leviathan", "Diabolos", "Titan", "Fenrir", "Ifrit", "Carbuncle", "Fire Spirit",
+ "Air Spirit", "Ice Spirit", "Thunder Spirit", "Light Spirit", "Dark Spirit", "Earth Spirit", "Water Spirit",
+ "Cait Sith", "Alexander", "Odin", "Atomos",
 }
 Spirit_Ele = {
 	Fire = "Fire Spirit",
@@ -190,10 +89,8 @@ function get_sets()
 		back = {
 			name = "Campestres's Cape",
 			augments = {
-				"Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20",
-				"Eva.+20 /Mag. Eva.+20",
-				"Pet: \"Regen\"+10",
-				"Pet: \"Regen\"+5",
+				"Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20", "Eva.+20 /Mag. Eva.+20", "Pet: \"Regen\"+10",
+    "Pet: \"Regen\"+5",
 			},
 		},
 		waist = "Klouskap Sash +1",
@@ -215,10 +112,8 @@ function get_sets()
 		back = {
 			name = "Campestres's Cape",
 			augments = {
-				"Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20",
-				"Eva.+20 /Mag. Eva.+20",
-				"Pet: \"Regen\"+10",
-				"Pet: \"Regen\"+5",
+				"Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20", "Eva.+20 /Mag. Eva.+20", "Pet: \"Regen\"+10",
+    "Pet: \"Regen\"+5",
 			},
 		},
 		waist = "Klouskap Sash +1",
@@ -241,10 +136,8 @@ function get_sets()
 		back = {
 			name = "Campestres's Cape",
 			augments = {
-				"Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20",
-				"Eva.+20 /Mag. Eva.+20",
-				"Pet: \"Regen\"+10",
-				"Pet: \"Regen\"+5",
+				"Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20", "Eva.+20 /Mag. Eva.+20", "Pet: \"Regen\"+10",
+    "Pet: \"Regen\"+5",
 			},
 		},
 		waist = "Klouskap Sash +1",
@@ -288,10 +181,8 @@ function get_sets()
 		back = {
 			name = "Campestres's Cape",
 			augments = {
-				"Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20",
-				"Eva.+20 /Mag. Eva.+20",
-				"Pet: \"Regen\"+10",
-				"Pet: \"Regen\"+5",
+				"Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20", "Eva.+20 /Mag. Eva.+20", "Pet: \"Regen\"+10",
+    "Pet: \"Regen\"+5",
 			},
 		},
 		waist = "Klouskap Sash +1", -- Incarnation Sash
@@ -314,10 +205,8 @@ function get_sets()
 		back = {
 			name = "Campestres's Cape",
 			augments = {
-				"Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20",
-				"Eva.+20 /Mag. Eva.+20",
-				"Pet: \"Regen\"+10",
-				"Pet: \"Regen\"+5",
+				"Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20", "Eva.+20 /Mag. Eva.+20", "Pet: \"Regen\"+10",
+    "Pet: \"Regen\"+5",
 			},
 		}, -- Pet MAcc/Dmg cape
 		waist = "Klouskap Sash +1", -- Regal Belt
@@ -340,10 +229,8 @@ function get_sets()
 		back = {
 			name = "Campestres's Cape",
 			augments = {
-				"Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20",
-				"Eva.+20 /Mag. Eva.+20",
-				"Pet: \"Regen\"+10",
-				"Pet: \"Regen\"+5",
+				"Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20", "Eva.+20 /Mag. Eva.+20", "Pet: \"Regen\"+10",
+    "Pet: \"Regen\"+5",
 			},
 		},
 		waist = "Klouskap Sash +1", -- Regal Belt

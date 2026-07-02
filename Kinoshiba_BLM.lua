@@ -1,9 +1,9 @@
 include("organizer-lib")
 
 local res = require("resources")
-local Craft = include("Craft")
-local Common_Maps = include("Common_Maps")
-local Common_Funcs = include("Common_Funcs")
+local Craft = include("Common/Craft")
+local Common_Maps = include("Common/Maps")
+local Common_Funcs = include("Common/Functions")
 local MagicBurst_Window = false
 local MagicBurst_Window_Expires = 0
 local MagicBurst_Timer_Running = false

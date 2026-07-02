@@ -1,9 +1,9 @@
 include("organizer-lib")
 
 local res = require("resources")
-local Craft = include("Craft")
-local Common_Maps = include("Common_Maps")
-local Common_Funcs = include("Common_Funcs")
+local Craft = include("Common/Craft")
+local Common_Maps = include("Common/Maps")
+local Common_Funcs = include("Common/Functions")
 
 function get_sets()
 	sets.JA = {}
