@@ -59,10 +59,10 @@ function get_sets()
 
 	sets.precast.Impact = {body = "Crepuscular Cloak"}
 	-- Midcast Sets
-	sets.midcast = {}
-	sets.midcast.Haste = {}
+	sets.Midcast = {}
+	sets.Midcast.Haste = {}
 
-	sets.midcast.Debuff = {
+	sets.Midcast.Debuff = {
 		main = "Wizard's Rod",
 		sub = "",
 		range = "Dunna",
@@ -83,7 +83,7 @@ function get_sets()
 		feet = "Geo. Sandals +3",
 	}
 
-	sets.midcast.Stun = {
+	sets.Midcast.Stun = {
 		main = "Wizard's Rod",
 		sub = "",
 		range = "Dunna",
@@ -104,7 +104,7 @@ function get_sets()
 		feet = "Geo. Sandals +3",
 	}
 
-	sets.midcast.LowNuke = {
+	sets.Midcast.LowNuke = {
 		main = "Wizard's Rod",
 		head = "Geo. Galero +3",
 		body = "Mallquis Saio +2",
@@ -114,7 +114,7 @@ function get_sets()
 		feet = "Mallquis Clogs +2",
 	}
 
-	sets.midcast.HighNuke = {
+	sets.Midcast.HighNuke = {
 		main = "Wizard's Rod",
 		head = "Geo. Galero +3",
 		body = "Jhakri Robe +2",
@@ -124,11 +124,11 @@ function get_sets()
 		feet = "Jhakri Pigaches +2",
 	}
 
-	sets.midcast.Cure = {main = "Bunzi's Rod"}
+	sets.Midcast.Cure = {main = "Bunzi's Rod"}
 
-	sets.midcast.Stoneskin = {}
+	sets.Midcast.Stoneskin = {}
 
-	sets.midcast.Impact = {body = "Crepuscular Cloak"}
+	sets.Midcast.Impact = {body = "Crepuscular Cloak"}
 	-- Aftercast Sets
 	sets.DT = {
 		head = "Nyame Helm",
@@ -260,19 +260,19 @@ function precast(spell)
 end
 
 function midcast(spell)
-	if sets.midcast[spell.english] then
-		equip(sets.midcast[spell.english])
+	if sets.Midcast[spell.english] then
+		equip(sets.Midcast[spell.english])
 	elseif string.find(spell.english, "Cur") then
-		equip(sets.midcast.Cure)
+		equip(sets.Midcast.Cure)
 	elseif spell.skill == "Enfeebling Magic" then
-		equip(sets.midcast.Debuff)
+		equip(sets.Midcast.Debuff)
 	elseif spell.skill == "Elemental Magic" then
 		if LowTierNukes:contains(spell.english) then
-			equip(sets.midcast.LowNuke)
+			equip(sets.Midcast.LowNuke)
 		else
-			equip(sets.midcast.HighNuke)
+			equip(sets.Midcast.HighNuke)
 			if spell.english == "Impact" then
-				equip(sets.midcast.Impact)
+				equip(sets.Midcast.Impact)
 			end
 		end
 	elseif spell.prefix == "/weaponskill" then

@@ -81,6 +81,8 @@ function get_sets()
 
 	sets.TP.TH = {ammo = "Per. Lucky Egg", feet = "Skulk. Poulaines +2"}
 
+	sets.Midcast = {}
+
 	sets.WS = {}
 	sets.WS_Default = {
 		head = "Pill. Bonnet +3",

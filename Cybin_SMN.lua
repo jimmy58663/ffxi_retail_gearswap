@@ -265,8 +265,8 @@ function get_sets()
 
 	sets.precast.Summoning = {}
 
-	sets.midcast = {}
-	sets.midcast.Cure = {main = "Chatoyant Staff"}
+	sets.Midcast = {}
+	sets.Midcast.Cure = {main = "Chatoyant Staff"}
 
 	sub_job_change(player.sub_job, "NON")
 end
@@ -300,10 +300,10 @@ function midcast(spell)
 		end
 	elseif spell.type == "WhiteMagic" or spell.type == "BlackMagic" then
 		if spell.name:match("Cure") or spell.name:match("Cura") then
-			equip(sets.midcast.Cure)
+			equip(sets.Midcast.Cure)
 		end
-	elseif sets.midcast[spell.english] then
-		equip(sets.midcast[spell.english])
+	elseif sets.Midcast[spell.english] then
+		equip(sets.Midcast[spell.english])
 	end
 end
 

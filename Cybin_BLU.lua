@@ -156,6 +156,8 @@ function get_sets()
 
 	sets.Precast.BlueMagic = {body = "Hashishin Mintan +2"}
 
+	sets.Midcast = {}
+
 	sets.BlueMagic = {}
 	sets.BlueMagic.Physical = {
 		ammo = "Crepuscular Pebble",

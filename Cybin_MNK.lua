@@ -58,6 +58,8 @@ function get_sets()
 
 	sets.TP.TH = {head = "Wh. Rarab Cap +1"}
 
+	sets.Midcast = {}
+
 	sets.WS = {}
 	sets.WS_Default = {
 		ammo = "Knobkierrie",

@@ -81,8 +81,8 @@ function get_sets()
 
 	sets.precast.EnhancingMagic = {}
 	-- Midcast Sets
-	sets.midcast = {}
-	sets.midcast.Haste = {
+	sets.Midcast = {}
+	sets.Midcast.Haste = {
 		head = "Aya. Zucchetto +2",
 		body = "Inyanga Jubbah +2",
 		hands = "Inyan. Dastanas +2",
@@ -90,7 +90,7 @@ function get_sets()
 		feet = "Aya. Gambieras +2",
 	}
 
-	sets.midcast.Debuff = {
+	sets.Midcast.Debuff = {
 		main = "Bunzi's Rod",
 		sub = "Archduke's Shield",
 		ammo = "Kalboron Stone",
@@ -108,7 +108,7 @@ function get_sets()
 		feet = "Inyan. Crackows +2",
 	}
 
-	sets.midcast.Cure = {
+	sets.Midcast.Cure = {
 		main = "Bunzi's Rod",
 		sub = "Archduke's Shield",
 		ammo = "Kalboron Stone",
@@ -125,7 +125,7 @@ function get_sets()
 		feet = "Nyame Sollerets",
 	}
 
-	sets.midcast.Regen = {
+	sets.Midcast.Regen = {
 		main = "Bolelabunga",
 		sub = "Archduke's Shield",
 		head = "Inyanga Tiara +2",
@@ -136,7 +136,7 @@ function get_sets()
 		feet = "Bunzi's Sabots",
 	}
 
-	sets.midcast.Stoneskin = {
+	sets.Midcast.Stoneskin = {
 		main = "Bunzi's Rod",
 		sub = "Archduke's Shield",
 		ammo = "Kalboron Stone",
@@ -153,7 +153,7 @@ function get_sets()
 		feet = "Nyame Sollerets",
 	}
 
-	sets.midcast.Cursna = {
+	sets.Midcast.Cursna = {
 		main = "Bunzi's Rod",
 		sub = "Archduke's Shield",
 		ammo = "Kalboron Stone",
@@ -170,11 +170,11 @@ function get_sets()
 		feet = "Nyame Sollerets",
 	}
 
-	sets.midcast.Auspice = {feet = "Orsn. Duckbills +2"}
+	sets.Midcast.Auspice = {feet = "Orsn. Duckbills +2"}
 
-	sets.midcast.StatusRemoval = {head = "Orison Cap +2", hands = "Orison Mitts +2", legs = "Orsn. Pantaln. +2"}
+	sets.Midcast.StatusRemoval = {head = "Orison Cap +2", hands = "Orison Mitts +2", legs = "Orsn. Pantaln. +2"}
 
-	sets.midcast.BarElement = {
+	sets.Midcast.BarElement = {
 		head = "Orison Cap +2",
 		body = "Orison Bliaut +2",
 		hands = "Orison Mitts +2",
@@ -184,7 +184,7 @@ function get_sets()
 		feet = "Orsn. Duckbills +2",
 	}
 
-	sets.midcast.BarStatus = {
+	sets.Midcast.BarStatus = {
 		-- waist="Embla Sash",
 	}
 
@@ -309,16 +309,16 @@ function precast(spell)
 end
 
 function midcast(spell)
-	if sets.midcast[spell.english] then
-		equip(sets.midcast[spell.english])
+	if sets.Midcast[spell.english] then
+		equip(sets.Midcast[spell.english])
 	elseif string.find(spell.english, "Cur") then
-		equip(sets.midcast.Cure)
+		equip(sets.Midcast.Cure)
 	elseif string.find(spell.english, "Regen") then
-		equip(sets.midcast.Regen)
+		equip(sets.Midcast.Regen)
 	elseif spell.skill == "Enfeebling Magic" then
-		equip(sets.midcast.Debuff)
+		equip(sets.Midcast.Debuff)
 	elseif Spell_Map[spell.english] == "StatusRemoval" then
-		equip(sets.midcast.StatusRemoval)
+		equip(sets.Midcast.StatusRemoval)
 	elseif spell.prefix == "/weaponskill" then
 		equip(sets.WS_Default)
 		if sets.WS[spell.english] then

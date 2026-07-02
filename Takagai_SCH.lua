@@ -101,8 +101,8 @@ function get_sets()
 
 	sets.precast.Impact = {body = "Crepuscular Cloak"}
 	-- Midcast Sets
-	sets.midcast = {}
-	sets.midcast.Haste = {
+	sets.Midcast = {}
+	sets.Midcast.Haste = {
 		ammo = "Incantor Stone",
 		head = "Acad. Mortar. +3",
 		body = "Telchine Chas.",
@@ -111,7 +111,7 @@ function get_sets()
 		feet = "Acad. Loafers +3",
 	}
 
-	sets.midcast.Debuff = {
+	sets.Midcast.Debuff = {
 		main = "Pedagogy Staff",
 		sub = "Kaja Grip",
 		ammo = "Kalboron Stone",
@@ -128,7 +128,7 @@ function get_sets()
 		feet = "Acad. Loafers +3",
 	}
 
-	sets.midcast.Stun = {
+	sets.Midcast.Stun = {
 		main = "Pedagogy Staff",
 		sub = "Kaja Grip",
 		ammo = "Kalboron Stone",
@@ -148,7 +148,7 @@ function get_sets()
 		feet = "Acad. Loafers +3",
 	}
 
-	sets.midcast.LowNuke = {
+	sets.Midcast.LowNuke = {
 		main = "Bunzi's rod",
 		sub = "Genbu's Shield",
 		ammo = "Hydrocera",
@@ -169,7 +169,7 @@ function get_sets()
 		feet = "Agwu's Pigaches",
 	}
 
-	sets.midcast.HighNuke = {
+	sets.Midcast.HighNuke = {
 		main = "Bunzi's rod",
 		sub = "Genbu's Shield",
 		ammo = "Hydrocera",
@@ -190,7 +190,7 @@ function get_sets()
 		feet = "Agwu's Pigaches",
 	}
 
-	sets.midcast.Cure = {
+	sets.Midcast.Cure = {
 		main = "Daybreak", -- 30%
 		sub = "Sors Shield", -- 3%
 		hands = "Weath. Cuffs +1", -- 9%
@@ -198,7 +198,7 @@ function get_sets()
 		legs = "Acad. Pants +3", -- 15%
 	}
 
-	sets.midcast.Regen = {
+	sets.Midcast.Regen = {
 		-- Telchine augment Enh Mag Duration +10
 		main = "Pedagogy Staff",
 		sub = "Kaja Grip",
@@ -211,7 +211,7 @@ function get_sets()
 		feet = "Telchine Pigaches",
 	}
 
-	sets.midcast.Stoneskin = {
+	sets.Midcast.Stoneskin = {
 		main = "Iridal Staff",
 		sub = "Enki Strap",
 		ammo = "Kalboron Stone",
@@ -225,14 +225,14 @@ function get_sets()
 		feet = "Mallquis Clogs +2",
 	}
 
-	sets.midcast.Cursna = {
+	sets.Midcast.Cursna = {
 		left_ring = "Ephedra Ring",
 		right_ring = "Ephedra Ring",
 		legs = "Acad. Pants +3",
 		feet = "Gende. Galosh. +1",
 	}
 
-	sets.midcast.Impact = {body = "Crepuscular Cloak"}
+	sets.Midcast.Impact = {body = "Crepuscular Cloak"}
 
 	-- Aftercast Sets
 	sets.DT = {
@@ -363,20 +363,20 @@ function precast(spell)
 end
 
 function midcast(spell)
-	if sets.midcast[spell.english] then
-		equip(sets.midcast[spell.english])
+	if sets.Midcast[spell.english] then
+		equip(sets.Midcast[spell.english])
 	elseif string.find(spell.english, "Cur") then
-		equip(sets.midcast.Cure)
+		equip(sets.Midcast.Cure)
 	elseif string.find(spell.english, "Regen") then
-		equip(sets.midcast.Regen)
+		equip(sets.Midcast.Regen)
 	elseif spell.skill == "Enfeebling Magic" then
-		equip(sets.midcast.Debuff)
+		equip(sets.Midcast.Debuff)
 	elseif Nuke_Map[spell.english] == "LowNuke" then
-		equip(sets.midcast.LowNuke)
+		equip(sets.Midcast.LowNuke)
 	elseif Nuke_Map[spell.english] == "HighNuke" then
-		equip(sets.midcast.HighNuke)
+		equip(sets.Midcast.HighNuke)
 		if spell.english == "Impact" then
-			equip(sets.midcast.Impact)
+			equip(sets.Midcast.Impact)
 		end
 	elseif spell.prefix == "/weaponskill" then
 		equip(sets.WS_Default)

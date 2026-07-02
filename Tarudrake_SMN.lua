@@ -275,8 +275,8 @@ function get_sets()
 
 	sets.precast.Summoning = {}
 
-	sets.midcast = {}
-	sets.midcast.Cure = {
+	sets.Midcast = {}
+	sets.Midcast.Cure = {
 		body = "Bunzi's Robe", -- 15%
 		hands = "Telchine Gloves", -- 17%
 	}
@@ -313,10 +313,10 @@ function midcast(spell)
 		end
 	elseif spell.type == "WhiteMagic" or spell.type == "BlackMagic" then
 		if spell.name:match("Cure") or spell.name:match("Cura") then
-			equip(sets.midcast.Cure)
+			equip(sets.Midcast.Cure)
 		end
-	elseif sets.midcast[spell.english] then
-		equip(sets.midcast[spell.english])
+	elseif sets.Midcast[spell.english] then
+		equip(sets.Midcast[spell.english])
 	end
 end
 
