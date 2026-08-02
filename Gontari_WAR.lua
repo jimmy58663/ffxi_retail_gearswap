@@ -69,7 +69,7 @@ function get_sets()
 		head = "Sakpata's Helm",
 		neck = "War. Beads +1",
 		left_ear = "Schere Earring",
-		right_ear = "Brutal Earring",
+		right_ear = "Boii Earring",
 		body = "Sakpata's Plate",
 		hands = "Sakpata's Gauntlets",
 		left_ring = "Moonlight Ring",
@@ -78,7 +78,7 @@ function get_sets()
 			name = "Cichol's Mantle",
 			augments = {"Accuracy+20 Attack+20", "\"Dbl.Atk.\"+10", "DEX+20", "Phys. dmg. taken-10%"},
 		},
-		waist = "Sailfi Belt +1",
+		waist = "Ioskeha Belt +1",
 		legs = "Sakpata's Cuisses",
 		feet = "Flam. Gambieras +2",
 	}
@@ -89,14 +89,14 @@ function get_sets()
 
 	sets.WS = {}
 	sets.WS_Default = {
-		-- ammo="Knobkierrie",
+		ammo = "Knobkierrie",
 		head = "Nyame Helm", -- head="Agoge Mask +3",
 		neck = "War. Beads +1",
 		left_ear = "Moonshade Earring",
-		-- right_ear="Thrud Earring",
+		right_ear = "Thrud Earring",
 		body = "Nyame Mail",
 		hands = "Nyame Gauntlets",
-		left_ring = "Petrov Ring",
+		left_ring = "Niqmaddu Ring",
 		right_ring = "Beithir Ring",
 		back = {name = "Cichol's Mantle", augments = {"STR+20", "Accuracy+20 Attack+20", "Weapon skill damage +10%"}},
 		waist = "Sailfi Belt +1",
@@ -126,7 +126,7 @@ function get_sets()
 			name = "Cichol's Mantle",
 			augments = {"Accuracy+20 Attack+20", "\"Dbl.Atk.\"+10", "DEX+20", "Phys. dmg. taken-10%"},
 		},
-		waist = "Sailfi Belt +1",
+		waist = "Plat. Mog. Belt",
 		legs = "Sakpata's Cuisses",
 		feet = "Sakpata's Leggings",
 	}
@@ -145,7 +145,7 @@ function get_sets()
 			name = "Cichol's Mantle",
 			augments = {"Accuracy+20 Attack+20", "\"Dbl.Atk.\"+10", "DEX+20", "Phys. dmg. taken-10%"},
 		},
-		waist = "Sailfi Belt +1",
+		waist = "Plat. Mog. Belt",
 		legs = "Sakpata's Cuisses",
 		feet = "Sakpata's Leggings",
 	}
