@@ -247,7 +247,7 @@ function get_sets()
 		body = "Nyame Mail",
 		hands = "Leth Ganth. +2",
 		left_ring = "Medada's Ring",
-		-- right_ring="Karieyah Ring",
+		right_ring = "Weather. Ring",
 		back = {name = "Sucellos's Cape", augments = {"MND+20", "Mag. Acc+20 /Mag. Dmg.+20", "Weapon skill damage +10%"}},
 		waist = "Orpheus's Sash",
 		legs = "Nyame Flanchard",
