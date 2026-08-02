@@ -86,7 +86,7 @@ function get_sets()
 		head = "Nyame Helm",
 		neck = "Rep. Plat. Medal",
 		left_ear = "Moonshade Earring",
-		-- right_ear="Thrud Earring",
+		right_ear = "Thrud Earring",
 		body = "Nyame Mail",
 		hands = "Nyame Gauntlets",
 		left_ring = "Beithir Ring",
@@ -99,6 +99,18 @@ function get_sets()
 
 	sets.WS["Savage Blade"] = {
 		-- legs="Boii Cuisses +1",
+	}
+
+	sets.WS["Atonement"] = {
+		-- ammo="Sapience Orb",
+		-- neck="Fotia Gorget",
+		left_ear = "Cryptic Earring",
+		left_ring = "Eihwaz Ring",
+		back = {
+			name = "Rudianos's Mantle",
+			augments = {"HP+60", "Eva.+20 /Mag. Eva.+20", "Enmity+10", "Phys. dmg. taken-10%"},
+		},
+		-- waist="Fotia Belt",
 	}
 
 	sets.Idle = {
@@ -170,7 +182,7 @@ function get_sets()
 			augments = {"HP+60", "Eva.+20 /Mag. Eva.+20", "Enmity+10", "Phys. dmg. taken-10%"},
 			priority = 10,
 		}, -- 10 Enmity
-		waist = "Audumbla Sash", -- 10% SIRD (4% PDT) --waist="Creed Baudrier", -- 5 Enmity
+		waist = "Creed Baudrier", -- 5 Enmity +40 HP
 		legs = {name = "Founder's Hose", augments = {"MND+6", "Mag. Acc.+10", "Attack+7", "Breath dmg. taken -2%"}}, -- 30% SIRD +54 HP
 		feet = "Odyssean Greaves", -- 23% SIRD +20 HP, +14 MP
 	}
@@ -201,7 +213,9 @@ function get_sets()
 		waist = "Audumbla Sash", -- 10% SIRD (4% PDT)
 	}
 
-	sets.Midcast.Enhancing = {}
+	sets.Midcast.Enhancing = {
+		hands = "Regal Gauntlets", -- 20% duration
+	}
 
 	sets.Midcast.Phalanx = {
 		-- main = "Sakpata's Sword", -- +5
