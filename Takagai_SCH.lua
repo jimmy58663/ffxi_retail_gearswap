@@ -234,6 +234,16 @@ function get_sets()
 
 	sets.Midcast.Impact = {body = "Crepuscular Cloak"}
 
+	sets.Midcast.Obis = {}
+	-- sets.Midcast.Obis.Fire = {waist="Karin Obi"}
+	sets.Midcast.Obis.Earth = {waist = "Dorin Obi"}
+	-- sets.Midcast.Obis.Water = {waist="Suirin Obi"}
+	-- sets.Midcast.Obis.Wind = {waist="Furin Obi"}
+	-- sets.Midcast.Obis.Ice = {waist="Hyorin Obi"}
+	-- sets.Midcast.Obis.Lightning = {waist="Rairin Obi"}
+	-- sets.Midcast.Obis.Light = {waist="Korin Obi"}
+	-- sets.Midcast.Obis.Dark = {waist="Anrin Obi"}
+
 	-- Aftercast Sets
 	sets.DT = {
 		head = "Nyame Helm",
@@ -347,6 +357,13 @@ function get_sets()
 	sub_job_change(player.sub_job, "NON")
 end
 
+local function affinity_check(element)
+	if element == world.weather_element or element == world.day_element and sets.Midcast.Obis[element] then
+		equip(sets.Midcast.Obis[element])
+	end
+	-- if set.Midcast[element] then equip(set.Midcast[element]) end
+end
+
 function precast(spell)
 	if spell.action_type == "Magic" then
 		equip(sets.precast.FC)
@@ -373,11 +390,13 @@ function midcast(spell)
 		equip(sets.Midcast.Debuff)
 	elseif Nuke_Map[spell.english] == "LowNuke" then
 		equip(sets.Midcast.LowNuke)
+		affinity_check(spell.element)
 	elseif Nuke_Map[spell.english] == "HighNuke" then
 		equip(sets.Midcast.HighNuke)
 		if spell.english == "Impact" then
 			equip(sets.Midcast.Impact)
 		end
+		affinity_check(spell.element)
 	elseif spell.prefix == "/weaponskill" then
 		equip(sets.WS_Default)
 		if sets.WS[spell.english] then
@@ -456,7 +475,7 @@ function self_command(command)
 end
 
 function sub_job_change(new, old)
-	send_command("input /macro book 3;wait .1;input /macro set 1")
+	send_command("input /macro book 20;wait .1;input /macro set 1")
 	send_command("@wait 5;input /lockstyleset 1")
 end
 
