@@ -28,12 +28,13 @@ function get_sets()
 	sets.Precast = {}
 	sets.Precast.FC = {
 		head = "Agwu's Cap", -- 5%
+		-- neck = "Voltsurge Torque", -- 4%
 		left_ear = "Etiolation Earring", -- 1%
 		right_ear = "Malignance Earring", -- 4%
 		body = "Agwu's Robe", -- 8%
 		hands = "Agwu's Gages", -- 6%
 		left_ring = "Medada's Ring", -- 10%
-		right_ring = "Jhakri Ring",
+		right_ring = "Weather. Ring", -- 5%
 		back = {
 			name = "Taranus's Cape",
 			augments = {"MP+60", "Eva.+20 /Mag. Eva.+20", "\"Fast Cast\"+10", "Phys. dmg. taken-10%"},
@@ -45,9 +46,7 @@ function get_sets()
 	sets.Precast.ElementalMagic = {
 		head = "Wicce Petasos +2", -- 16%
 		body = "Wicce Coat +2", -- 15%
-		hands = "Mallquis Cuffs +2",
-		legs = "Mallquis Trews +2",
-		feet = "Mallquis Clogs +2",
+		feet = "Mallquis Clogs +2", -- 6%
 	}
 
 	sets.Precast.EnhancingMagic = {}
