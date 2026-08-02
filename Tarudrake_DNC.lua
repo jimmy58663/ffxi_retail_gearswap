@@ -34,7 +34,7 @@ function get_sets()
 	Weapon_mode = 1
 
 	sets.Weapon = {}
-	sets.Weapon.TPDagger = {main = "Tauret", sub = "Centovente"}
+	sets.Weapon.TPDagger = {main = "Gleti's Knife", sub = "Centovente"}
 	sets.Weapon.Tauret = {main = "Tauret", sub = "Gleti's Knife"}
 
 	sets.TP.Normal = {
