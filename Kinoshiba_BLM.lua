@@ -99,7 +99,7 @@ function get_sets()
 		ammo = "Sroda Tathlum",
 		head = "Wicce Petasos +2", -- head="Agwu's Cap",
 		neck = "Sibyl Scarf",
-		left_ear = "Moonshade Earring", -- left_ear="Regal Earring",
+		left_ear = "Hecate's Earring", -- left_ear="Regal Earring",
 		right_ear = "Malignance Earring",
 		body = "Wicce Coat +2", -- Spaekona's utility MP back
 		hands = "Wicce Gloves +2",
@@ -120,7 +120,7 @@ function get_sets()
 		ammo = "Ghastly Tathlum +1",
 		head = "Wicce Petasos +2", -- head="Agwu's Cap",
 		neck = "Src. Stole +1", -- +2
-		left_ear = "Moonshade Earring", -- left_ear="Regal Earring",
+		left_ear = "Hecate's Earring", -- left_ear="Regal Earring",
 		right_ear = "Malignance Earring",
 		body = "Wicce Coat +2",
 		hands = "Wicce Gloves +2", -- hands="Agwu's Gages",
@@ -139,9 +139,9 @@ function get_sets()
 		main = "Wizard's rod",
 		-- sub="Ammurapi Shield",
 		ammo = "Ghastly Tathlum +1",
-		head = "Ea Hat",
+		head = "Ea Hat +1",
 		neck = "Src. Stole +1", -- +2
-		left_ear = "Moonshade Earring", -- left_ear="Regal Earring",
+		left_ear = "Hecate's Earring", -- left_ear="Regal Earring",
 		right_ear = "Malignance Earring",
 		body = "Wicce Coat +2",
 		hands = "Ea Cuffs", -- hands="Agwu's Gages",
@@ -162,7 +162,7 @@ function get_sets()
 		ammo = "Ombre Tathlum +1", -- ammo="Pemphedro Tathlum",
 		head = "Mall. Chapeau +2", -- head="Agwu's Cap",--head="Wicce Petasos +3",
 		neck = "Src. Stole +1", -- +2
-		left_ear = "Moonshade Earring", -- left_ear="Regal Earring",
+		left_ear = "Hecate's Earring", -- left_ear="Regal Earring",
 		right_ear = "Malignance Earring",
 		body = "Mallquis Saio +2", -- body="Agwu's Robe",--body="Spaekona's Coat +4",
 		hands = "Mallquis Cuffs +2", -- hands="Agwu's Gages",--hands="Spae. Gloves +4"
