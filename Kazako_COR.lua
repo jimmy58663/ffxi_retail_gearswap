@@ -20,7 +20,7 @@ function get_sets()
 		body = "Lanun Frac +2",
 		hands = "Nyame Gauntlets", -- hands="Carmine Fin. Ga. +1",
 		-- left_ring="Fenrir Ring +1",
-		-- right_ring="Dingir Ring",
+		right_ring = "Dingir Ring",
 		back = {name = "Camulus's Mantle", augments = {"AGI+20", "Mag. Acc+20 /Mag. Dmg.+20", "Weapon skill damage +10%"}},
 		waist = "Eschan Stone", -- waist="Skymir Cord +1",
 		legs = "Nyame Flanchard",
@@ -31,10 +31,10 @@ function get_sets()
 		main = {name = "Rostam", augments = {"Path: C"}},
 		range = "Compensator",
 		head = "Lanun Tricorne +1",
-		-- neck="Regal Necklace",
+		neck = "Regal Necklace",
 		left_ear = "Etiolation Earring",
 		right_ear = "Alabaster",
-		-- body="Malignance Tabard",
+		body = "Malignance Tabard",
 		hands = "Chasseur's Gants +2",
 		right_ring = "Murky Ring",
 		back = {
@@ -43,7 +43,7 @@ function get_sets()
 		},
 		waist = "Plat. Mog. Belt",
 		legs = "Chas. Culottes +2",
-		-- feet="Malignance Boots",
+		feet = "Malignance Boots",
 	}
 
 	sets.JA["Caster's Roll"] = {legs = "Chas. Culottes +2"}
@@ -97,7 +97,7 @@ function get_sets()
 	TP_mode = 2
 
 	Weapon_map = {[1] = "Earp", [2] = "Naegling", [3] = "Tauret", [4] = "NaeglingDW", [5] = "OnionDW"}
-	Weapon_mode = 1
+	Weapon_mode = 2
 
 	sets.Weapon = {}
 	sets.Weapon.Earp = {
@@ -115,9 +115,9 @@ function get_sets()
 		head = "Malignance Chapeau",
 		neck = "Iskur Gorget",
 		left_ear = "Suppanomimi",
-		right_ear = "Brutal Earring",
-		body = "Mummu Jacket +2",
-		hands = "Mummu Wrists +2",
+		right_ear = "Alabaster Earring",
+		body = "Malignance Tabard",
+		hands = "Malignance Gloves",
 		left_ring = "Mummu Ring",
 		right_ring = "Petrov Ring",
 		back = {
@@ -126,7 +126,7 @@ function get_sets()
 		},
 		waist = "Sailfi Belt +1",
 		legs = "Chas. Culottes +2",
-		feet = "Mummu Gamash. +2",
+		feet = "Malignance Boots",
 	}
 
 	sets.TP.Ranged.Normal = {
@@ -151,9 +151,9 @@ function get_sets()
 		head = "Malignance Chapeau",
 		neck = "Iskur Gorget",
 		left_ear = "Suppanomimi",
-		right_ear = "Brutal Earring",
-		body = "Nyame Mail",
-		hands = "Nyame Gauntlets",
+		right_ear = "Alabaster Earring",
+		body = "Malignance Tabard",
+		hands = "Malignance Gloves",
 		left_ring = "Mummu Ring",
 		right_ring = "Petrov Ring",
 		back = {
@@ -162,7 +162,7 @@ function get_sets()
 		},
 		waist = "Sailfi Belt +1",
 		legs = "Chas. Culottes +2",
-		feet = "Nyame Sollerets",
+		feet = "Malignance Boots",
 	}
 
 	sets.TP.Ranged.Hybrid = {
@@ -223,7 +223,7 @@ function get_sets()
 		body = "Laksa Frac +3", -- body="Ikenga's Vest", --Augment tp +200
 		hands = "Chasseur's Gants +2",
 		left_ring = "Cornelia's Ring",
-		right_ring = "Petrov Ring", -- right_ring="Dingir Ring",
+		right_ring = "Dingir Ring",
 		back = {name = "Camulus's Mantle", augments = {"AGI+20", "Rng.Acc.+20 Rng.Atk.+20", "Weapon skill damage +10%"}},
 		waist = "Sailfi Belt +1", -- waist="Fotia Belt",
 		legs = "Nyame Flanchard",
@@ -235,7 +235,7 @@ function get_sets()
 		neck = "Rep. Plat. Medal",
 		-- right_ear="Ishvara Earring",
 		-- body="Nyame Mail", --R20+
-		-- right_ring="Regal Ring",
+		right_ring = "Regal Ring",
 		back = {name = "Camulus's Mantle", augments = {"STR+20", "Accuracy+20 Attack+20", "Weapon skill damage +10%"}},
 		feet = "Nyame Sollerets",
 	}
@@ -246,7 +246,7 @@ function get_sets()
 		right_ear = "Brutal Earring",
 		-- body="Nyame Mail", --R20+
 		hands = "Mummu Wrists +2",
-		right_ring = "Ilabrat Ring", -- right_ring="Regal Ring",
+		right_ring = "Regal Ring",
 		back = {
 			name = "Camulus's Mantle",
 			augments = {"DEX+20", "Accuracy+20 Attack+20", "\"Dbl.Atk.\"+10", "Phys. dmg. taken-10%"},
@@ -261,7 +261,7 @@ function get_sets()
 		right_ear = "Friomisi Earring",
 		-- body="Nyame Mail",
 		hands = "Nyame Gauntlets",
-		right_ring = "Meghanada Ring", -- right_ring="Dingir Ring",
+		right_ring = "Dingir Ring",
 		back = {name = "Camulus's Mantle", augments = {"AGI+20", "Mag. Acc+20 /Mag. Dmg.+20", "Weapon skill damage +10%"}},
 		waist = "Eschan Stone", -- waist="Fotia Belt",
 	}
@@ -273,8 +273,8 @@ function get_sets()
 		right_ear = "Friomisi Earring",
 		body = "Lanun Frac +2",
 		hands = "Nyame Gauntlets",
-		left_ring = "Cornelia's Ring", -- right_ring="Dingir Ring",
-		right_ring = "Archon Ring",
+		left_ring = "Archon Ring",
+		right_ring = "Dingir Ring",
 		back = {name = "Camulus's Mantle", augments = {"AGI+20", "Mag. Acc+20 /Mag. Dmg.+20", "Weapon skill damage +10%"}},
 		waist = "Eschan Stone", -- waist="Skymir Cord +1",
 	}
@@ -286,7 +286,7 @@ function get_sets()
 		right_ear = "Friomisi Earring",
 		body = "Lanun Frac +2",
 		hands = "Nyame Gauntlets",
-		right_ring = "Meghanada Ring", -- right_ring="Dingir Ring",
+		right_ring = "Dingir Ring",
 		back = {name = "Camulus's Mantle", augments = {"AGI+20", "Mag. Acc+20 /Mag. Dmg.+20", "Weapon skill damage +10%"}},
 		waist = "Eschan Stone", -- waist="Skymir Cord +1",
 	}
@@ -299,7 +299,7 @@ function get_sets()
 		body = "Meg. Cuirie +2",
 		hands = "Chasseur's Gants +2",
 		left_ring = "Mummu Ring",
-		right_ring = "Murky Ring",
+		right_ring = "Regal Ring",
 		back = {
 			name = "Camulus's Mantle",
 			augments = {"DEX+20", "Accuracy+20 Attack+20", "\"Dbl.Atk.\"+10", "Phys. dmg. taken-10%"},
@@ -314,8 +314,8 @@ function get_sets()
 		neck = "Elite Royal Collar",
 		left_ear = "Etiolation Earring",
 		right_ear = "Alabaster Earring",
-		body = "Nyame Mail",
-		hands = "Nyame Gauntlets",
+		body = "Malignance Tabard",
+		hands = "Malignance Gloves",
 		left_ring = "Mummu Ring",
 		right_ring = "Murky Ring",
 		back = {
@@ -324,7 +324,7 @@ function get_sets()
 		},
 		waist = "Sailfi Belt +1",
 		legs = "Chas. Culottes +2",
-		feet = "Nyame Sollerets",
+		feet = "Malignance Boots",
 	}
 
 	sets.DT = {
@@ -332,8 +332,8 @@ function get_sets()
 		neck = "Elite Royal Collar",
 		left_ear = "Etiolation Earring",
 		right_ear = "Alabaster Earring",
-		body = "Nyame Mail",
-		hands = "Nyame Gauntlets",
+		body = "Malignance Tabard",
+		hands = "Malignance Gloves",
 		left_ring = "Mummu Ring",
 		right_ring = "Murky Ring",
 		back = {
@@ -342,7 +342,7 @@ function get_sets()
 		},
 		waist = "Sailfi Belt +1",
 		legs = "Chas. Culottes +2",
-		feet = "Nyame Sollerets",
+		feet = "Malignance Boots",
 	}
 
 	sets.TP.DT = sets.DT
@@ -469,7 +469,7 @@ function self_command(command)
 		if Ranged then
 			Weapon_mode = 1
 		else
-			Weapon_mode = 3
+			Weapon_mode = 4
 		end
 		if player.status == "Engaged" and Ranged then
 			equip(sets.TP.Ranged[TP_map[TP_mode]])
@@ -523,11 +523,11 @@ function sub_job_change(new, old)
 	if player.sub_job == "NIN" then
 		send_command("input /macro book 17;wait .1;input /macro set 1")
 		Ranged = false
-		Weapon_mode = 3
+		Weapon_mode = 4
 	elseif player.sub_job == "DNC" then
 		send_command("input /macro book 17;wait .1;input /macro set 1")
 		Ranged = false
-		Weapon_mode = 3
+		Weapon_mode = 4
 	elseif player.sub_job == "WAR" then
 		send_command("input /macro book 17;wait .1;input /macro set 2")
 	elseif player.sub_job == "DRG" then
