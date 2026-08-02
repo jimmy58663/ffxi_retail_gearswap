@@ -42,7 +42,7 @@ function get_sets()
 		left_ring = "Gurebu's Ring",
 		right_ring = "Murky Ring",
 		back = {name = "Ogma's Cape", augments = {"HP+60", "Eva.+20 /Mag. Eva.+20", "Enmity+10", "Phys. dmg. taken-10%"}},
-		waist = "Sailfi Belt +1",
+		waist = "Ioskeha Belt +1",
 		legs = "Nyame Flanchard",
 		feet = "Nyame Sollerets",
 	}
@@ -61,7 +61,7 @@ function get_sets()
 			name = "Ogma's Cape",
 			augments = {"DEX+20", "Accuracy+20 Attack+20", "\"Dbl.Atk.\"+10", "Phys. dmg. taken-10%"},
 		},
-		waist = "Sailfi Belt +1",
+		waist = "Ioskeha Belt +1",
 		legs = "Nyame Flanchard",
 		feet = "Nyame Sollerets",
 	}
@@ -123,7 +123,7 @@ function get_sets()
 		left_ring = "Gurebu's Ring",
 		right_ring = "Moonlight Ring",
 		back = {name = "Ogma's Cape", augments = {"HP+60", "Eva.+20 /Mag. Eva.+20", "Enmity+10", "Phys. dmg. taken-10%"}},
-		waist = "Sailfi Belt +1",
+		waist = "Ioskeha Belt +1",
 		legs = "Nyame Flanchard",
 		feet = "Nyame Sollerets",
 	}
@@ -139,7 +139,7 @@ function get_sets()
 		left_ring = "Gurebu's Ring",
 		right_ring = "Moonlight Ring",
 		back = {name = "Ogma's Cape", augments = {"HP+60", "Eva.+20 /Mag. Eva.+20", "Enmity+10", "Phys. dmg. taken-10%"}},
-		waist = "Sailfi Belt +1",
+		waist = "Ioskeha Belt +1",
 		legs = "Nyame Flanchard",
 		feet = "Nyame Sollerets",
 	}
