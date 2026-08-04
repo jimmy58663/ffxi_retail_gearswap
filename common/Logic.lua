@@ -6,6 +6,7 @@ res = require("resources")
 local MagicBurst_Window = false
 local MagicBurst_Window_Expires = 0
 local MagicBurst_Timer_Running = false
+local Action_Handle_ID
 
 Weapon_Locked = false
 
@@ -173,12 +174,15 @@ function buff_change(buff, gain)
 	job_buff_change(buff, gain)
 end
 
+if Action_Handle_ID then
+	windower.unregister_event(Action_Handle_ID)
+end
+
 -- Reaction code for actions
-windower.register_event("action", function(act)
-	local actor = windower.ffxi.get_mob_by_id(act.actor_id)
-	local self = windower.ffxi.get_player()
+Action_Handle_ID = windower.register_event("action", function(act)
 	local category = act.category
-	-- Category 8 is Casting Start: https://github.com/Windower/Lua/blob/dev/addons/libs/packets/fields.lua#L1800-L1813
+
+	-- Category 8 is Casting Start: https://github.com/Windower/Lua/blob/dev/addons/libs/packets/fields.lua#L1853-L1868
 	if category == 8 then
 		local spellID = act.targets[1].actions[1].param
 		local spell = res.spells[spellID]
@@ -210,37 +214,38 @@ windower.register_event("action", function(act)
 				end
 			end
 		end
-	end
-end)
+	elseif category == 3 then -- Check if the action is a finished Weapon Skill (Category 3)
+		local action = act.targets and act.targets[1] and act.targets[1].actions and act.targets[1].actions[1]
+		if action and action.has_add_effect and Common_Maps.SkillchainEffects:contains(action.add_effect_message) then
+			if Common_Funcs.Is_In_Party(act.actor_id) then
+				-- Activate Magic Burst Mode
+				MagicBurst_Window = true
+				add_to_chat(204, "Skillchain Detected! Magic Burst Window Open.")
+				MagicBurst_Window_Expires = os.time() + 10 -- Set the expiration time for the Magic Burst window
 
--- Magic burst window tracker
-windower.register_event("incoming chunk", function(id, data)
-	if id == 0x28 then -- Action Packet
-		local packet = windower.packets.parse_action(data)
-		if Common_Funcs.Is_In_Party(packet.actor_id) then
-			for _, target in pairs(packet.targets) do
-				for _, action in pairs(target.actions) do
-					-- Check for Skillchain message IDs (usually 288-302, 385-402, etc.)
-					if action.has_add_effect and Common_Maps.SkillchainEffects:contains(action.add_effect_message) then
-						-- Activate Magic Burst Mode
-						MagicBurst_Window = true
-						add_to_chat(204, "Skillchain Detected! Magic Burst Window Open.")
-						MagicBurst_Window_Expires = os.time() + 10 -- Set the expiration time for the Magic Burst window
-
-						if not MagicBurst_Timer_Running then
-							MagicBurst_Timer_Running = true
-							coroutine.schedule(function()
-								while os.clock() < MagicBurst_Window_Expires do
-									coroutine.sleep(0.5)
-								end
-								MagicBurst_Window = false
-								MagicBurst_Timer_Running = false
-								add_to_chat(123, "Magic Burst Window Closed.")
-							end, 0.5)
+				if not MagicBurst_Timer_Running then
+					MagicBurst_Timer_Running = true
+					coroutine.schedule(function()
+						while os.clock() < MagicBurst_Window_Expires do
+							coroutine.sleep(0.5)
 						end
-					end
+						MagicBurst_Window = false
+						MagicBurst_Timer_Running = false
+						add_to_chat(123, "Magic Burst Window Closed.")
+					end, 0.5)
 				end
 			end
 		end
 	end
 end)
+
+function file_unload()
+	if Action_Handle_ID then
+		windower.unregister_event(Action_Handle_ID)
+		Action_Handle_ID = nil
+	end
+
+	MagicBurst_Window = false
+	MagicBurst_Window_Expires = 0
+	MagicBurst_Timer_Running = false
+end
