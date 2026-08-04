@@ -159,8 +159,6 @@ function get_sets()
 		feet = "Souveran Schuhs +1",
 	}
 
-	sets.TP.DT = sets.DT
-
 	sub_job_change(player.sub_job, "NON")
 end
 
