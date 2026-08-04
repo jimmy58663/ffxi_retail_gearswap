@@ -81,45 +81,4 @@ function Common_Funcs.Apply_Weapon_Lock_State()
 	end
 end
 
--- Let Logic.lua handle this when I start using that
--- Reaction code for actions
-windower.register_event("action", function(act)
-	local actor = windower.ffxi.get_mob_by_id(act.actor_id)
-	local self = windower.ffxi.get_player()
-	local category = act.category
-	-- Category 8 is Casting Start: https://github.com/Windower/Lua/blob/dev/addons/libs/packets/fields.lua#L1800-L1813
-	if category == 8 then
-		local spellID = act.targets[1].actions[1].param
-		local spell = res.spells[spellID]
-		if spell and (spell.en == "Phalanx" or spell.en == "Phalanx II") then
-			if Common_Funcs.Is_In_Party(act.targets[1].id) then
-				if sets.Midcast.Phalanx then
-					equip(sets.Midcast.Phalanx)
-					disable("head", "body", "hands", "legs", "feet")
-					coroutine.schedule(function()
-						enable("head", "body", "hands", "legs", "feet")
-						windower.send_command("gs c update")
-					end, 3)
-				end
-			end
-		end
-	elseif category == 4 then -- Check if the action is a finished Magic Spell cast (Category 4)
-		if act.param == 55 then -- Sneak spell ID is 55
-			for _, target in ipairs(act.targets) do
-				if target.id == windower.ffxi.get_player().id and buffactive["Sneak"] then
-					windower.send_command("cancel Sneak")
-					break
-				end
-			end
-		elseif act.param == 57 then -- Invisible spell ID is 57
-			for _, target in ipairs(act.targets) do
-				if target.id == windower.ffxi.get_player().id and buffactive["Invisible"] then
-					windower.send_command("cancel Invisible")
-					break
-				end
-			end
-		end
-	end
-end)
-
 return Common_Funcs
