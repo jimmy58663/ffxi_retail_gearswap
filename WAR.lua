@@ -51,11 +51,13 @@ function job_self_command(command)
 		end
 	end
 
-	if (Abyssea_Weapon) then
-		equip(sets.Weapon.Abyssea[Abyssea_Weapon_map[Abyssea_Weapon_mode]])
-		windower.add_to_chat("Weapon mode is now: " .. Abyssea_Weapon_map[Abyssea_Weapon_mode])
-	else
-		equip(sets.Weapon[Weapon_map[Weapon_mode]])
-		windower.add_to_chat("Weapon mode is now: " .. Weapon_map[Weapon_mode])
+	if parts[1]:contains("abyssea") then
+		if (Abyssea_Weapon) then
+			equip(sets.Weapon.Abyssea[Abyssea_Weapon_map[Abyssea_Weapon_mode]])
+			windower.add_to_chat("Weapon mode is now: " .. Abyssea_Weapon_map[Abyssea_Weapon_mode])
+		else
+			equip(sets.Weapon[Weapon_map[Weapon_mode]])
+			windower.add_to_chat("Weapon mode is now: " .. Weapon_map[Weapon_mode])
+		end
 	end
 end
