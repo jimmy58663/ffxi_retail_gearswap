@@ -146,8 +146,10 @@ function self_command(command)
 		windower.add_to_chat("Weapon mode is now: " .. Weapon_map[Weapon_mode])
 	elseif parts[1] == "lockweapon" then
 		Common_Funcs.Lock_Weapon()
+		windower.add_to_chat("Weapon is now: LOCKED")
 	elseif parts[1] == "unlockweapon" then
 		Common_Funcs.Unlock_Weapon()
+		windower.add_to_chat("Weapon is now: UNLOCKED")
 	end
 
 	job_self_command(cmd)
