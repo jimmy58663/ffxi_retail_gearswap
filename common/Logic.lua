@@ -21,6 +21,7 @@ sets.Precast = {}
 sets.Precast.FC = {}
 sets.Midcast = {}
 sets.Midcast.Phalanx = {}
+sets.Midcast.Obis = {}
 sets.DT = {}
 sets.TP = {}
 sets.Weapon = {}
@@ -171,7 +172,7 @@ function buff_change(buff, gain)
 		Common_Funcs.Update_Gear()
 	end
 
-	job_buff_change(buff, gain)
+	job_buff_change(buff_name, gain)
 end
 
 if Action_Handle_ID then
