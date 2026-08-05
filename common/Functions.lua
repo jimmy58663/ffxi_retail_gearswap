@@ -65,19 +65,25 @@ end
 
 function Common_Funcs.Lock_Weapon()
 	Weapon_Locked = true
-	disable("main", "sub")
+	disable("main", "sub", "range")
 end
 
 function Common_Funcs.Unlock_Weapon()
 	Weapon_Locked = false
-	enable("main", "sub")
+	enable("main", "sub", "range")
 end
 
 function Common_Funcs.Apply_Weapon_Lock_State()
 	if Weapon_Locked then
-		disable("main", "sub")
+		disable("main", "sub", "range")
 	else
-		enable("main", "sub")
+		enable("main", "sub", "range")
+	end
+end
+
+function Common_Funcs.Affinity_Check(element)
+	if element == world.weather_element or element == world.day_element and sets.Midcast.Obis[element] then
+		equip(sets.Midcast.Obis[element])
 	end
 end
 
