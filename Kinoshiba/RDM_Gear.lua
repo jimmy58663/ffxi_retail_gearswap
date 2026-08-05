@@ -1,24 +1,10 @@
-include("organizer-lib")
+function init_gear_sets()
+	Weapon_Locked = true
 
-local res = require("resources")
-local Craft = include("Common/Craft")
-local Common_Maps = include("Common/Maps")
-local Common_Funcs = include("Common/Functions")
-local MagicBurst_Window = false
-local MagicBurst_Window_Expires = 0
-local MagicBurst_Timer_Running = false
-
-function get_sets()
-	sets.JA = {}
 	sets.JA.Saboteur = {hands = "Leth. Ganth. +2"}
 
-	sets.TP = {}
-	-- Modes
-	mode_map = {[1] = "Melee", [2] = "Support"}
-	mode = 1
-
-	TP_map = {[1] = "Normal", [2] = "Hybrid", [3] = "DT"}
-	TP_mode = 2
+	TP_map = {[1] = "Hybrid", [2] = "DT"}
+	TP_mode = 1
 
 	Weapon_map = {
 		[1] = "Crocea",
@@ -30,32 +16,12 @@ function get_sets()
 	}
 	Weapon_mode = 4
 
-	sets.Weapon = {}
 	sets.Weapon.Crocea = {main = "Crocea Mors", sub = "Genbu's Shield"}
 	sets.Weapon.Naegling = {main = "Kaja Sword", sub = "Genbu's Shield"}
 	sets.Weapon.Maxentius = {main = "Maxentius", sub = "Genbu's Shield"}
 	sets.Weapon.CroceaDW = {main = "Crocea Mors", sub = "Wizard's Rod"} -- sub="Daybreak"}
 	sets.Weapon.NaeglingDW = {main = "Kaja Sword", sub = "Wizard's Rod"}
 	sets.Weapon.MaxentiusDW = {main = "Maxentius", sub = "Wizard's Rod"}
-
-	sets.TP.Normal = {
-		ammo = "Coiste Bodhar",
-		head = "Aya. Zucchetto +2",
-		neck = "Dls. Torque +1",
-		left_ear = "Suppanomimi",
-		right_ear = "Brutal Earring",
-		body = "Lethargy Sayon +2",
-		hands = "Aya. Manopolas +2",
-		left_ring = "Enlivened Ring",
-		right_ring = "Rajas Ring",
-		back = {
-			name = "Sucellos's Cape",
-			augments = {"DEX+20", "Accuracy+20 Attack+20", "\"Dbl.Atk.\"+10", "Phys. dmg. taken-10%"},
-		},
-		waist = {name = "Sailfi Belt +1", augments = {"Path: A"}},
-		legs = "Aya. Cosciales +2",
-		feet = "Aya. Gambieras +2",
-	}
 
 	sets.TP.Hybrid = {
 		ammo = "Coiste Bodhar",
@@ -83,7 +49,6 @@ function get_sets()
 		-- head="Wh. Rarab Cap +1",
 	}
 
-	sets.Precast = {}
 	sets.Precast.FC = {
 		-- 38% traits, 80% cap
 		left_ear = "Etiolation Earring", -- 1%
@@ -100,7 +65,6 @@ function get_sets()
 
 	sets.Precast.EnfeeblingMagic = {head = "Leth. Chappel +1"}
 
-	sets.Midcast = {}
 	sets.Midcast.Cure = {main = "Bunzi's Rod"}
 
 	sets.Midcast.Debuff = {
@@ -157,7 +121,7 @@ function get_sets()
 	sets.Midcast.MagicBurst = {
 		main = "Wizard's Rod",
 		range = "Kaja Bow",
-		head = "Ea Hat",
+		head = "Ea Hat +1",
 		neck = "Dls. Torque +1",
 		left_ear = "Alabaster Earring",
 		right_ear = "Malignance Earring",
@@ -198,7 +162,6 @@ function get_sets()
 
 	sets.Midcast.Refresh = {legs = "Leth. Fuseau +1"}
 
-	sets.Midcast.Obis = {}
 	-- sets.Midcast.Obis.Fire = {waist="Karin Obi"}
 	sets.Midcast.Obis.Earth = {waist = "Dorin Obi"}
 	-- sets.Midcast.Obis.Water = {waist="Suirin Obi"}
@@ -208,8 +171,7 @@ function get_sets()
 	-- sets.Midcast.Obis.Light = {waist="Korin Obi"}
 	-- sets.Midcast.Obis.Dark = {waist="Anrin Obi"}
 
-	sets.WS = {}
-	sets.WS_Default = {
+	sets.WS = {
 		ammo = "Coiste Bodhar",
 		head = "Nyame Helm", -- head="Viti. Chapeau +4",
 		neck = "Dls. Torque +1",
@@ -305,198 +267,25 @@ function get_sets()
 		feet = "Nyame Sollerets",
 	}
 
-	sets.TP.DT = sets.DT
-
-	enable("main", "sub")
 	sub_job_change(player.sub_job, "NON")
-end
-
-local function affinity_check(element)
-	if element == world.weather_element or element == world.day_element and sets.Midcast.Obis[element] then
-		equip(sets.Midcast.Obis[element])
-	end
-	-- if set.Midcast[element] then equip(set.Midcast[element]) end
-end
-
-function precast(spell)
-	if spell.english == "Spectral Jig" and buffactive.sneak then
-		send_command("cancel sneak")
-	end
-	if spell.action_type == "Magic" then
-		equip(sets.Precast.FC)
-		if string.find(spell.english, "Cur") then
-			equip(sets.Precast.Cure)
-		elseif spell.skill == "Elemental Magic" then
-			equip(sets.Precast.ElementalMagic)
-		elseif spell.skill == "Enhancing Magic" then
-			equip(sets.Precast.EnhancingMagic)
-		elseif spell.skill == "Enfeebling Magic" then
-			equip(sets.Precast.EnfeeblingMagic)
-		end
-	end
-end
-
-function midcast(spell)
-	if sets.JA[spell.english] then
-		equip(sets.JA[spell.english])
-	elseif string.find(spell.english, "Cur") then
-		equip(sets.Midcast.Cure)
-	elseif spell.skill == "Enfeebling Magic" then
-		equip(sets.Midcast.Debuff)
-		if buffactive["Saboteur"] then
-			equip(sets.JA.Saboteur)
-		end
-	elseif spell.skill == "Enhancing Magic" then
-		equip(sets.Midcast.Buff)
-		if string.find(spell.english, "Refresh") then
-			equip(sets.Midcast.Refresh)
-		end
-	elseif spell.skill == "Elemental Magic" then
-		if Common_Maps.Nuke[spell.english] == "LowNuke" then
-			equip(sets.Midcast.LowNuke)
-		elseif Common_Maps.Nuke[spell.english] == "HighNuke" then
-			equip(sets.Midcast.HighNuke)
-		end
-		if MagicBurst_Window then
-			equip(sets.Midcast.MagicBurst)
-		end
-		affinity_check(spell.element)
-	elseif spell.prefix == "/weaponskill" then
-		equip(sets.WS_Default)
-		if sets.WS[spell.english] then
-			equip(sets.WS[spell.english])
-		end
-	end
-	if string.find(spell.english, "Dia") or string.find(spell.english, "Bio") then
-		equip(sets.TH)
-	end
-end
-
-function aftercast(spell)
-	if player.status == "Engaged" then
-		equip(sets.TP[TP_map[TP_mode]])
-	else
-		equip(sets.Idle)
-	end
-	equip(sets.Weapon[Weapon_map[Weapon_mode]])
-end
-
-function status_change(new, old)
-	if T {"Idle", "Resting"}:contains(new) then
-		equip(sets.Idle)
-	elseif new == "Engaged" then
-		equip(sets.TP[TP_map[TP_mode]])
-	end
-	equip(sets.Weapon[Weapon_map[Weapon_mode]])
-end
-
-function self_command(command)
-	command = string.lower(command)
-	local cmd_array = string.split(command, " ")
-	if cmd_array[1] == "tp" then
-		TP_mode = TP_mode + 1
-		if TP_mode > #TP_map then
-			TP_mode = 1
-		end
-		equip(sets.TP[TP_map[TP_mode]])
-		windower.add_to_chat("TP mode is now: " .. TP_map[TP_mode])
-	elseif cmd_array[1] == "mode" then
-		if (cmd_array[2] ~= nil) then
-			mode = tonumber(cmd_array[2])
-		else
-			mode = mode + 1
-		end
-		if mode > #mode_map then
-			mode = 1
-		end
-		windower.add_to_chat("Mode is now: " .. mode_map[mode])
-		if mode == 1 then -- Disable main and sub in Melee mode
-			equip(sets.Weapon[Weapon_map[Weapon_mode]])
-			disable("main", "sub", "range")
-		else
-			enable("main", "sub", "range")
-		end
-	elseif cmd_array[1] == "weapon" then
-		if type(cmd_array[2]) == "string" then
-			for index, name in pairs(Weapon_map) do
-				if name:lower() == cmd_array[2] then
-					Weapon_mode = index
-				end
-			end
-		else
-			Weapon_mode = Weapon_mode + 1
-		end
-		if Weapon_mode > #Weapon_map then
-			Weapon_mode = 1
-		end
-		windower.add_to_chat("Weapon mode is now: " .. Weapon_map[Weapon_mode])
-		if mode == 1 then
-			enable("main", "sub", "range")
-			equip(sets.Weapon[Weapon_map[Weapon_mode]])
-			disable("main", "sub", "range")
-		end
-	elseif command:contains("craft") then
-		Craft.handle_command(command)
-	elseif command:lower() == "update" then
-		Common_Funcs.Update_Gear()
-	end
-
 end
 
 function sub_job_change(new, old)
 	if new == "NIN" then
 		send_command("input /macro book 5;wait .1;input /macro set 1")
 		Weapon_mode = 4
-		equip(sets.Weapon[Weapon_map[Weapon_mode]])
 	elseif new == "DRK" then
 		send_command("input /macro book 5;wait .1;input /macro set 3")
 	else
 		send_command("input /macro book 5;wait .1;input /macro set 1")
 	end
-	if mode == 1 then
-		enable("main", "sub", "range")
-		equip(sets.Weapon[Weapon_map[Weapon_mode]])
-		disable("main", "sub", "range")
-	else
-		equip(sets.Weapon[Weapon_map[Weapon_mode]])
+
+	if Weapon_Locked then
+		Common_Funcs.Unlock_Weapon()
+		Weapon_Locked = true
 	end
+	equip(sets.Weapon[Weapon_map[Weapon_mode]])
+	Common_Funcs.Apply_Weapon_Lock_State()
+
 	send_command("@wait 5;input /lockstyleset 3")
-end
-
-windower.register_event("incoming chunk", function(id, data)
-	if id == 0x28 then -- Action Packet
-		local packet = windower.packets.parse_action(data)
-		if Common_Funcs.Is_In_Party(packet.actor_id) then
-			for _, target in pairs(packet.targets) do
-				for _, action in pairs(target.actions) do
-					-- Check for Skillchain message IDs (usually 288-302, 385-402, etc.)
-					if action.has_add_effect and Common_Maps.SkillchainEffects:contains(action.add_effect_message) then
-						-- Activate Magic Burst Mode
-						MagicBurst_Window = true
-						add_to_chat(204, "Skillchain Detected! Magic Burst Window Open.")
-						MagicBurst_Window_Expires = os.time() + 10 -- Set the expiration time for the Magic Burst window
-
-						if not MagicBurst_Timer_Running then
-							MagicBurst_Timer_Running = true
-							coroutine.schedule(function()
-								while os.clock() < MagicBurst_Window_Expires do
-									coroutine.sleep(0.5)
-								end
-								MagicBurst_Window = false
-								MagicBurst_Timer_Running = false
-								add_to_chat(123, "Magic Burst Window Closed.")
-							end, 0.5)
-						end
-					end
-				end
-			end
-		end
-	end
-end)
-
-function buff_change(buff, gain)
-	local buff_name = buff:lower()
-	if buff_name == "encumbrance" and not gain then
-		Common_Funcs.Update_Gear()
-	end
 end
