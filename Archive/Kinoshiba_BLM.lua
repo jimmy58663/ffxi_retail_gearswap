@@ -388,6 +388,16 @@ function midcast(spell)
 		affinity_check(spell.element)
 	elseif spell.skill == "Dark Magic" then
 		equip(sets.Midcast.Dark)
+	elseif spell.prefix == "/weaponskill" then
+		equip(sets.WS_Default)
+		if sets.WS[spell.english] then
+			equip(sets.WS[spell.english])
+		end
+	elseif sets.JA[spell.english] then
+		equip(sets.JA[spell.english])
+	end
+	if spell.english:contains("Dia") or spell.english:contains("Bio") then
+		equip(sets.TH)
 	end
 end
 
