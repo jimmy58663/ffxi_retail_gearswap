@@ -9,6 +9,7 @@ local MagicBurst_Timer_Running = false
 local Action_Handle_ID
 
 Weapon_Locked = false
+Movement = false
 
 -- Set up empty sets so logic won't break if they aren't in gear files
 if not sets then
@@ -28,6 +29,7 @@ sets.Weapon = {}
 sets.Weapon.Default = {} -- Don't use this, it's just a placeholder for the default weapon set. Use sets.Weapon.[Weapon Name] instead.
 sets.Idle = {}
 sets.TH = {}
+sets.Movement = {}
 
 TP_map = {[1] = "Hybrid"}
 TP_mode = 1
@@ -105,6 +107,9 @@ function aftercast(spell)
 		equip(sets.TP[TP_map[TP_mode]])
 	else
 		equip(sets.Idle)
+		if Movement then
+			equip(sets.Movement)
+		end
 	end
 	equip(sets.Weapon[Weapon_map[Weapon_mode]])
 	job_aftercast(spell)
@@ -150,6 +155,10 @@ function self_command(command)
 	elseif parts[1] == "unlockweapon" then
 		Common_Funcs.Unlock_Weapon()
 		windower.add_to_chat("Weapon is now: UNLOCKED")
+	elseif parts[1] == "movement" then
+		Movement = not Movement
+		windower.add_to_chat("Movement mode is now: " .. (Movement and "ON" or "OFF"))
+		aftercast()
 	end
 
 	job_self_command(cmd)
@@ -158,6 +167,9 @@ end
 function status_change(new, old)
 	if T {"Idle", "Resting"}:contains(new) then
 		equip(sets.Idle)
+		if Movement then
+			equip(sets.Movement)
+		end
 	elseif new == "Engaged" then
 		equip(sets.TP[TP_map[TP_mode]])
 	end
