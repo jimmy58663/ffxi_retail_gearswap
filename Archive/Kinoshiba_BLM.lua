@@ -29,8 +29,8 @@ function get_sets()
 	sets.Precast.FC = {
 		head = "Agwu's Cap", -- 5%
 		-- neck = "Voltsurge Torque", -- 4%
-		left_ear = "Etiolation Earring", -- 1%
-		right_ear = "Malignance Earring", -- 4%
+		left_ear = "Malignance Earring", -- 4%
+		right_ear = "Etiolation Earring", -- 1%
 		body = "Agwu's Robe", -- 8%
 		hands = "Agwu's Gages", -- 6%
 		left_ring = "Medada's Ring", -- 10%
@@ -59,7 +59,8 @@ function get_sets()
 		head = "Wicce Petasos +2",
 		ammo = "Ombre Tathlum +1",
 		neck = "Src. Stole +1",
-		right_ear = "Malignance Earring",
+		left_ear = "Malignance Earring",
+		right_ear = "Wicce Earring +2",
 		body = "Wicce Coat +2",
 		hands = "Wicce Gloves +2",
 		left_ring = "Medada's Ring",
@@ -78,7 +79,8 @@ function get_sets()
 		head = "Wicce Petasos +2",
 		ammo = "Ombre Tathlum +1",
 		neck = "Src. Stole +1",
-		right_ear = "Malignance Earring",
+		left_ear = "Malignance Earring",
+		right_ear = "Wicce Earring +2",
 		body = "Wicce Coat +2",
 		hands = "Wicce Gloves +2",
 		left_ring = "Medada's Ring",
@@ -98,8 +100,8 @@ function get_sets()
 		ammo = "Sroda Tathlum",
 		head = "Wicce Petasos +2", -- head="Agwu's Cap",
 		neck = "Sibyl Scarf",
-		left_ear = "Hecate's Earring", -- left_ear="Regal Earring",
-		right_ear = "Malignance Earring",
+		left_ear = "Malignance Earring",
+		right_ear = "Wicce Earring +2",
 		body = "Wicce Coat +2", -- Spaekona's utility MP back
 		hands = "Wicce Gloves +2",
 		left_ring = "Medada's Ring", -- left_ring="Freke Ring",
@@ -119,8 +121,8 @@ function get_sets()
 		ammo = "Ghastly Tathlum +1",
 		head = "Wicce Petasos +2", -- head="Agwu's Cap",
 		neck = "Src. Stole +1", -- +2
-		left_ear = "Hecate's Earring", -- left_ear="Regal Earring",
-		right_ear = "Malignance Earring",
+		left_ear = "Malignance Earring",
+		right_ear = "Wicce Earring +2",
 		body = "Wicce Coat +2",
 		hands = "Wicce Gloves +2", -- hands="Agwu's Gages",
 		left_ring = "Medada's Ring", -- left_ring="Freke Ring",
@@ -140,8 +142,8 @@ function get_sets()
 		ammo = "Ghastly Tathlum +1",
 		head = "Ea Hat +1",
 		neck = "Src. Stole +1", -- +2
-		left_ear = "Hecate's Earring", -- left_ear="Regal Earring",
-		right_ear = "Malignance Earring",
+		left_ear = "Malignance Earring",
+		right_ear = "Wicce Earring +2",
 		body = "Wicce Coat +2",
 		hands = "Ea Cuffs", -- hands="Agwu's Gages",
 		left_ring = "Medada's Ring", -- left_ring="Freke Ring",
@@ -161,8 +163,8 @@ function get_sets()
 		ammo = "Ombre Tathlum +1", -- ammo="Pemphedro Tathlum",
 		head = "Mall. Chapeau +2", -- head="Agwu's Cap",--head="Wicce Petasos +3",
 		neck = "Src. Stole +1", -- +2
-		left_ear = "Hecate's Earring", -- left_ear="Regal Earring",
-		right_ear = "Malignance Earring",
+		left_ear = "Malignance Earring",
+		right_ear = "Wicce Earring +2",
 		body = "Mallquis Saio +2", -- body="Agwu's Robe",--body="Spaekona's Coat +4",
 		hands = "Mallquis Cuffs +2", -- hands="Agwu's Gages",--hands="Spae. Gloves +4"
 		left_ring = "Medada's Ring", -- left_ring="Stikini Ring +1",
@@ -207,8 +209,8 @@ function get_sets()
 		ammo = "Ombre Tathlum +1", -- ammo="Pemphedro Tathlum",
 		head = "Pixie Hairpin +1",
 		neck = "Src. Stole +1", -- neck="Erra Pendant",
-		-- left_ear="Hirudinea Earring",
-		right_ear = "Malignance Earring", -- right_ear="Wicce Earring +1",
+		left_ear = "Malignance Earring", -- left_ear="Hirudinea Earring",
+		right_ear = "Wicce Earring +2",
 		body = "Wicce Coat +2", -- body="Shango Robe",
 		hands = "Wicce Gloves +2", -- hands="Merlinic Dastanas", --Oseem Drain/Aspir Potency +10%
 		left_ring = "Medada's Ring", -- Evanescence Ring
@@ -386,16 +388,6 @@ function midcast(spell)
 		affinity_check(spell.element)
 	elseif spell.skill == "Dark Magic" then
 		equip(sets.Midcast.Dark)
-	elseif spell.prefix == "/weaponskill" then
-		equip(sets.WS_Default)
-		if sets.WS[spell.english] then
-			equip(sets.WS[spell.english])
-		end
-	elseif sets.JA[spell.english] then
-		equip(sets.JA[spell.english])
-	end
-	if spell.english:contains("Dia") or spell.english:contains("Bio") then
-		equip(sets.TH)
 	end
 end
 
