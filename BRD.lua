@@ -76,14 +76,18 @@ function job_midcast(spell, magic_burst)
 end
 
 function job_aftercast(spell)
-	if (player.sub_job == "NIN" and buffactive["Haste Samba"]) then
-		equip(sets.TP.HasteSamba)
+	if player.status == "Engaged" then
+		if (player.sub_job == "NIN" and buffactive["Haste Samba"]) then
+			equip(sets.TP.HasteSamba)
+		end
 	end
 end
 
 function job_status_change(new, old)
-	if (player.sub_job == "NIN" and buffactive["Haste Samba"]) then
-		equip(sets.TP.HasteSamba)
+	if new == "Engaged" then
+		if (player.sub_job == "NIN" and buffactive["Haste Samba"]) then
+			equip(sets.TP.HasteSamba)
+		end
 	end
 end
 
