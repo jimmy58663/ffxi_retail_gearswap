@@ -53,8 +53,10 @@ function job_aftercast(spell)
 end
 
 function job_status_change(new, old)
-	if buffactive["Sublimation: Activated"] then
-		equip(sets.Idle.Sublimation)
+	if new == "Idle" or new == "Resting" then
+		if buffactive["Sublimation: Activated"] then
+			equip(sets.Idle.Sublimation)
+		end
 	end
 end
 
