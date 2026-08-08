@@ -1,7 +1,7 @@
 function init_gear_sets()
 	-- sets.JA.Berserk = {body="Pumm. Lorica +2", back={ name="Cichol's Mantle", augments={'Accuracy+20 Attack+20','"Dbl.Atk."+10','DEX+20'}}}
 
-	TP_map = {[1] = "Pet", [2] = "Hybrid", [3] = "Player"}
+	TP_map = {[1] = "Hybrid", [2] = "Player"}
 	TP_mode = 1
 
 	Weapon_map = {[1] = "Naegling", [2] = "DualWield"}
@@ -10,21 +10,6 @@ function init_gear_sets()
 	sets.Weapon = {}
 	sets.Weapon.Naegling = {main = "Naegling", sub = "Beatific Shield +1"}
 	sets.Weapon.DualWield = {main = "Naegling", sub = "Blurred Knife +1"}
-
-	sets.TP.Pet = {
-		head = "Meghanada Visor +2",
-		neck = "Ej Necklace",
-		left_ear = "Bladeborn Earring",
-		right_ear = "Steelflash Earring",
-		body = "Meg. Cuirie +2",
-		hands = "Meg. Gloves +2",
-		left_ring = "Meghanada Ring",
-		right_ring = "Chirich Ring +1",
-		back = "Aptitude Mantle +1",
-		waist = "Cetl Belt",
-		legs = "Meg. Chausses +2",
-		feet = "Meg. Jam. +2",
-	}
 
 	sets.TP.Hybrid = {
 		head = "Meghanada Visor +2",
