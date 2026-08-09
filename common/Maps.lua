@@ -378,6 +378,7 @@ Maps.SkillchainEffects = S {
  395, 396, 397, 398,
 }
 
+Maps.BloodPacts = {}
 Maps.BloodPacts.Physical = S {
 	"Punch", "Rock Throw", "Barracuda Dive", "Claw", "Axe Kick", "Shock Strike", "Camisado", "Regal Scratch",
  "Poison Nails", "Moonlit Charge", "Crescent Fang", "Rock Buster", "Tail Whip", "Double Punch", "Megalith Throw",
