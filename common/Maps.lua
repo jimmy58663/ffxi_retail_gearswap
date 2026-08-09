@@ -378,4 +378,37 @@ Maps.SkillchainEffects = S {
  395, 396, 397, 398,
 }
 
+Maps.BloodPacts.Physical = S {
+	"Punch", "Rock Throw", "Barracuda Dive", "Claw", "Axe Kick", "Shock Strike", "Camisado", "Regal Scratch",
+ "Poison Nails", "Moonlit Charge", "Crescent Fang", "Rock Buster", "Tail Whip", "Double Punch", "Megalith Throw",
+ "Double Slap", "Eclipse Bite", "Mountain Buster", "Spinning Dive", "Predator Claws", "Rush", "Chaotic Strike",
+ "Crag Throw", "Volt Strike",
+}
+
+Maps.BloodPacts.Hybrid = S {"Burning Strike", "Flaming Crush"}
+
+Maps.BloodPacts.Magic = S {
+	"Inferno", "Earthen Fury", "Tidal Wave", "Aerial Blast", "Diamond Dust", "Judgment Bolt", "Searing Light",
+ "Howling Moon", "Ruinous Omen", "Fire II", "Stone II", "Water II", "Aero II", "Blizzard II", "Thunder II",
+ "Thunderspark", "Somnolence", "Meteorite", "Fire IV", "Stone IV", "Water IV", "Aero IV", "Blizzard IV", "Thunder IV",
+ "Nether Blast", "Meteor Strike", "Geocrush", "Grand Fall", "Wind Blade", "Heavenly Strike", "Thunderstorm",
+ "Level ? Holy", "Holy Mist", "Lunar Bay", "Night Terror", "Conflag Strike",
+}
+
+Maps.BloodPacts.Debuff = S {
+	"Lunar Cry", "Mewing Lullaby", "Nightmare", "Lunar Roar", "Slowga", "Ultimate Terror", "Sleepga", "Eerie Eye",
+ "Tidal Roar", "Diamond Storm", "Shock Squall", "Pavor Nocturnus",
+}
+
+Maps.BloodPacts.Buff = S {
+	"Shining Ruby", "Frost Armor", "Rolling Thunder", "Crimson Howl", "Lightning Armor", "Ecliptic Growl", "Hastega",
+ "Noctoshield", "Ecliptic Howl", "Dream Shroud", "Earthen Armor", "Fleet Wind", "Inferno Howl", "Soothing Ruby",
+ "Heavenward Howl", "Soothing Current", "Hastega II", "Crystal Blessing",
+}
+
+Maps.BloodPacts.Other = S {
+	"Healing Ruby", "Raise II", "Aerial Armor", "Reraise II", "Whispering Wind", "Glittering Ruby", "Earthen Ward",
+ "Spring Water", "Healing Ruby II",
+}
+
 return Maps
