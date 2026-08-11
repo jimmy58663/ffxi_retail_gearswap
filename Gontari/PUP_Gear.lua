@@ -2,8 +2,8 @@ function init_gear_sets()
 	AutoManeuver = true
 	AutoPetWS = true
 
-	sets.JA.Maneuver = {neck = "Buffoon's Collar", body = "Karagoz Farsetto", back = "Visucius's Mantle"}
-	sets.JA.Overdrive = {body = "Pitre Tobe"}
+	sets.JA.Maneuver = {neck = "Buffoon's Collar", left_ear = "Burana Earring", back = "Visucius's Mantle"} -- body = "Karagoz Farsetto",
+	-- sets.JA.Overdrive = {body = "Pitre Tobe"}
 
 	PetRole_map = {[1] = "HybridDD", [2] = "Bruiser", [3] = "Turtle", [4] = "Ranged", [5] = "Nuker", [6] = "Healer"}
 	PetRole = 2
@@ -27,7 +27,7 @@ function init_gear_sets()
 		left_ring = "Varar Ring +1",
 		right_ring = "Thurandaut Ring",
 		back = "Visucius's Mantle",
-		waist = "Klouskap Sash +1",
+		waist = "Incarnation Sash", -- waist = "Klouskap Sash +1",
 		legs = "Mpaca's Hose",
 		feet = "Mpaca's Boots",
 	}
@@ -39,10 +39,10 @@ function init_gear_sets()
 		right_ear = "Karagoz Earring",
 		body = "Mpaca's Doublet",
 		hands = "Mpaca's Gloves",
-		left_ring = "Chirich Ring +1",
+		left_ring = "Hizamaru Ring", -- left_ring = "Chirich Ring +1",
 		right_ring = "Niqmaddu Ring",
 		back = "Visucius's Mantle",
-		waist = "Klouskap Sash +1",
+		waist = "Cornelia's Belt", -- waist = "Klouskap Sash +1",
 		legs = "Mpaca's Hose",
 		feet = "Mpaca's Boots",
 	}
@@ -59,7 +59,7 @@ function init_gear_sets()
 		left_ring = "Varar Ring +1", -- C. Palug Ring
 		right_ring = "Thurandaut Ring",
 		back = "Visucius's Mantle",
-		waist = "Klouskap Sash +1",
+		waist = "Incarnation Sash", -- waist = "Klouskap Sash +1",
 		legs = "Taeon Tights",
 		feet = "Mpaca's Boots",
 	}
@@ -70,7 +70,7 @@ function init_gear_sets()
 
 	sets.Overdrive.Ranged = {
 		-- Xiucoatl
-		head = "Karagoz Cappello",
+		-- head = "Karagoz Cappello",
 		neck = "Shulmanu Collar",
 		left_ear = "Enmerkar Earring", -- Rimeice Earring
 		right_ear = "Karagoz Earring",
@@ -79,7 +79,7 @@ function init_gear_sets()
 		left_ring = "Varar Ring +1", -- C. Palug Ring
 		right_ring = "Thurandaut Ring",
 		back = "Visucius's Mantle", -- back="Dispersal Mantle", --TP Bonus +500
-		waist = "Klouskap Sash +1",
+		waist = "Incarnation Sash", -- waist = "Klouskap Sash +1",
 		legs = "Taeon Tights", -- Heyoka Subligar +1
 		feet = "Mpaca's Boots",
 	}
@@ -97,32 +97,32 @@ function init_gear_sets()
 		right_ear = "Karagoz Earring",
 		body = "Mpaca's Doublet",
 		hands = "Mpaca's Gloves",
-		left_ring = "Ephramad's Ring",
+		left_ring = "Beithir Ring",
 		right_ring = "Niqmaddu Ring",
 		back = "Visucius's Mantle",
-		waist = "Windbuffet Belt +1",
+		waist = "Cornelia's Belt", -- waist = "Windbuffet Belt +1",
 		legs = "Mpaca's Hose",
 		feet = "Mpaca's Boots",
 	}
 
 	sets.WS.PetTP = {
-		main = "Pitre Fists",
-		head = "Karagoz Cappello",
+		-- main = "Pitre Fists",
+		-- head = "Karagoz Cappello",
 		neck = "Shulmanu Collar",
-		-- left_ear="Burana Earring",
+		left_ear = "Burana Earring",
 		right_ear = "Karagoz Earring",
 		-- body="Pitre Tobe +3",
 		hands = "Mpaca's Gloves",
 		-- left_ring="Overbearing Ring",
 		right_ring = "Thurandaut Ring",
 		-- back="Dispersal Mantle", --TP Bonus +500
-		waist = "Klouskap Sash +1",
+		waist = "Incarnation Sash", -- waist = "Klouskap Sash +1",
 		-- legs="Kara. Pantaloni +3",
 		feet = "Mpaca's Boots",
 	}
 
 	sets.WS.PetDA = {
-		main = "Pitre Fists",
+		-- main = "Pitre Fists",
 		head = "Taeon Chapeau",
 		neck = "Shulmanu Collar",
 		-- left_ear="Domes. Earring",
@@ -144,10 +144,10 @@ function init_gear_sets()
 		right_ear = "Karagoz Earring",
 		body = "Mpaca's Doublet",
 		hands = "Mpaca's Gloves",
-		left_ring = "Chirich Ring +1",
+		left_ring = "Varar Ring +1", -- Chirich +1
 		right_ring = "Thurandaut Ring",
 		back = "Visucius's Mantle",
-		waist = "Klouskap Sash +1",
+		waist = "Incarnation Sash", -- waist = "Klouskap Sash +1",
 		legs = "Tali'ah Sera. +2",
 		feet = "Tali'ah Crackows +2",
 	}
@@ -191,13 +191,13 @@ function init_gear_sets()
 		left_ear = "Enmerkar Earring",
 		right_ear = "Karagoz Earring",
 		body = "Taeon Tabard", -- Rao Togi +1
-		hands = "Rao Kote +1",
+		hands = "Taeon Gloves", -- hands = "Rao Kote +1",
 		left_ring = "Varar Ring +1", -- Overbearing Ring
 		right_ring = "Thurandaut Ring",
 		back = "Visucius's Mantle",
-		waist = "Isa Belt",
+		waist = "Incarnation Sash", -- waist = "Isa Belt",
 		legs = "Taeon Tights", -- Rao Haidate +1
-		feet = "Rao Sune-Ate +1",
+		feet = "Taeon Boots", -- feet = "Rao Sune-Ate +1",
 	}
 
 	sets.Idle.Pet.Ranged = {
@@ -211,7 +211,7 @@ function init_gear_sets()
 		left_ring = "Varar Ring +1",
 		right_ring = "Thurandaut Ring",
 		back = "Visucius's Mantle",
-		waist = "Klouskap Sash +1",
+		waist = "Incarnation Sash", -- waist = "Klouskap Sash +1",
 		legs = "Taeon Tights", -- Kara. Pantaloni +3
 		feet = "Mpaca's Boots",
 	}
