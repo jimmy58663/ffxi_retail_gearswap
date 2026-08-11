@@ -11,7 +11,17 @@ function job_pretarget(spell)
 end
 
 function job_precast(spell)
-
+	if spell.type == "WeaponSkill" then
+		if HybridWS:contains(spell.english) then
+			equip(sets.WS.Hybrid)
+		end
+		if buffactive["Sekkanoki"] then
+			equip(sets.JA.Sekkanoki)
+		end
+		if buffactive["Meikyo Shisui"] then
+			equip(sets.JA["Meikyo Shisui"])
+		end
+	end
 end
 
 function job_midcast(spell, magic_burst)
