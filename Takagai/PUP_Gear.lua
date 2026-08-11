@@ -219,6 +219,19 @@ function init_gear_sets()
 
 	sets.Idle.Pet.Nuker = {
 		-- Xiucoatl
+		ammo = "Animator P II",
+		head = "Mpaca's Cap", -- Herc Int 10-15/MAB+30
+		neck = "Adad Amulet", -- Pup Collar +2
+		left_ear = "Kyrene's Earring",
+		right_ear = "Karagoz Earring",
+		body = "Udug Jacket",
+		hands = "Mpaca's Gloves", -- Herc Int 10-15/MAB+30
+		left_ring = "Tali'ah Ring", -- C. Palug
+		right_ring = "Murky Ring",
+		back = "Visucius's Mantle", -- Pet Macc&Mdmg+20 Eva&Meva+20 Pet: Regen+10 Pet: Macc +10 Pet: DT-5
+		waist = "Incarnation Sash", -- Ukko Sash
+		legs = "Mpaca's Hose", -- Pitre +3
+		feet = "Mpaca's Boots", -- Pitre +3
 
 	}
 
