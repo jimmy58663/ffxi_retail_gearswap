@@ -27,7 +27,7 @@ function init_gear_sets()
 		left_ring = "Varar Ring +1",
 		right_ring = "Thurandaut Ring",
 		back = "Visucius's Mantle",
-		waist = "Incarnation Sash", -- waist = "Klouskap Sash +1",
+		waist = "Klouskap Sash +1",
 		legs = "Mpaca's Hose",
 		feet = "Mpaca's Boots",
 	}
@@ -42,7 +42,7 @@ function init_gear_sets()
 		left_ring = "Hizamaru Ring", -- left_ring = "Chirich Ring +1",
 		right_ring = "Niqmaddu Ring",
 		back = "Visucius's Mantle",
-		waist = "Cornelia's Belt", -- waist = "Klouskap Sash +1",
+		waist = "Klouskap Sash +1",
 		legs = "Mpaca's Hose",
 		feet = "Mpaca's Boots",
 	}
@@ -59,7 +59,7 @@ function init_gear_sets()
 		left_ring = "Varar Ring +1", -- C. Palug Ring
 		right_ring = "Thurandaut Ring",
 		back = "Visucius's Mantle",
-		waist = "Incarnation Sash", -- waist = "Klouskap Sash +1",
+		waist = "Klouskap Sash +1",
 		legs = "Taeon Tights",
 		feet = "Mpaca's Boots",
 	}
@@ -79,7 +79,7 @@ function init_gear_sets()
 		left_ring = "Varar Ring +1", -- C. Palug Ring
 		right_ring = "Thurandaut Ring",
 		back = "Visucius's Mantle", -- back="Dispersal Mantle", --TP Bonus +500
-		waist = "Incarnation Sash", -- waist = "Klouskap Sash +1",
+		waist = "Klouskap Sash +1",
 		legs = "Taeon Tights", -- Heyoka Subligar +1
 		feet = "Mpaca's Boots",
 	}
@@ -116,7 +116,7 @@ function init_gear_sets()
 		-- left_ring="Overbearing Ring",
 		right_ring = "Thurandaut Ring",
 		-- back="Dispersal Mantle", --TP Bonus +500
-		waist = "Incarnation Sash", -- waist = "Klouskap Sash +1",
+		waist = "Klouskap Sash +1",
 		-- legs="Kara. Pantaloni +3",
 		feet = "Mpaca's Boots",
 	}
@@ -147,7 +147,7 @@ function init_gear_sets()
 		left_ring = "Varar Ring +1", -- Chirich +1
 		right_ring = "Thurandaut Ring",
 		back = "Visucius's Mantle",
-		waist = "Incarnation Sash", -- waist = "Klouskap Sash +1",
+		waist = "Klouskap Sash +1",
 		legs = "Tali'ah Sera. +2",
 		feet = "Tali'ah Crackows +2",
 	}
@@ -211,7 +211,7 @@ function init_gear_sets()
 		left_ring = "Varar Ring +1",
 		right_ring = "Thurandaut Ring",
 		back = "Visucius's Mantle",
-		waist = "Incarnation Sash", -- waist = "Klouskap Sash +1",
+		waist = "Klouskap Sash +1",
 		legs = "Taeon Tights", -- Kara. Pantaloni +3
 		feet = "Mpaca's Boots",
 	}
